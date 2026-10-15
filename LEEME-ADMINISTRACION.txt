@@ -1,0 +1,35 @@
+ADMINISTRACIÓN DEL SITIO — DR. GUSTAVO ARIAS
+
+Qué incluye
+- La portada aprobada en homepage-hero.png.
+- El sitio HTML/CSS.
+- content/site.json: los textos que se pueden editar desde el panel.
+- admin/: panel visual basado en Decap CMS.
+
+IMPORTANTE
+El panel visual funciona una vez que el sitio está publicado y conectado a un repositorio Git. No basta con abrir index.html desde Finder. Los cambios guardados desde el panel se convierten en cambios del repositorio y después se publican en el sitio.
+
+PUBLICACIÓN Y CONFIGURACIÓN (una sola vez)
+1. Crea una cuenta en GitHub si no tienes una.
+2. Crea un repositorio nuevo y sube TODOS los archivos de esta carpeta conservando la estructura.
+3. Crea una cuenta en Netlify y conecta ese repositorio. La configuración de netlify.toml publica la carpeta raíz.
+4. En Netlify, abre Site configuration / Identity (o Identity en el menú, según la interfaz) y habilita Identity si está disponible en tu sitio.
+5. Habilita Git Gateway en la configuración de Identity / Services.
+6. Invita tu correo como usuario administrador y acepta la invitación desde ese correo.
+7. En admin/config.yml, reemplaza https://TU-SITIO.netlify.app por la URL real que te asigne Netlify, en site_url y display_url.
+8. Guarda ese cambio en GitHub y espera a que Netlify publique.
+9. Abre https://TU-SITIO.netlify.app/admin/ e inicia sesión.
+
+Después de la configuración
+- Entra a /admin/ para editar los cinco principios, las áreas de práctica, los textos de investigación, la biografía y el contacto.
+- Usa Save y luego Publish para publicar los cambios.
+- Puedes seguir editando el HTML/CSS directamente para cambiar estructura o diseño; el panel es para el contenido habitual.
+
+PORTADA
+La portada aprobada es una sola imagen compuesta (homepage-hero.png), con el fondo beige, la fotografía y la tipografía integrados en la misma imagen. Por eso el texto de la portada no se edita campo por campo en el panel: para cambiarlo, hay que reemplazar la imagen completa. El resto del contenido listado arriba sí se edita desde el panel.
+
+SEGURIDAD Y VERIFICACIÓN
+Antes de publicar, sustituye el correo provisional contacto@tudominio.com por el correo profesional correcto. Comprueba también la información de trayectoria, las áreas de práctica y cualquier afirmación profesional.
+
+NOTA
+Los proveedores cambian ocasionalmente sus menús y opciones. Si la interfaz de Netlify ya no muestra Identity/Git Gateway, no compartas contraseñas ni tokens aquí; revisaremos una alternativa compatible con la configuración actual.
