@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f3f0">
+
+  <meta name="description" content="La toma de decisiones compartida en neurocirugía: evidencia científica, comunicación de riesgos, alternativas terapéuticas y preferencias del paciente. Una reflexión del Dr. Gustavo Arias.">
+
+  <title>Toma de decisiones compartidas | Dr. Gustavo Arias</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f4f3f0;
+      --ink: #202832;
+      --muted: #6f777e;
+      --line: #d8d9d7;
+      --accent: #6e8798;
+      --soft: #e6e9eb;
+      --white: #fff;
+      --beige: #d7c6b2;
+      --max: 1280px;
+      --reading: 740px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto;
+    }
+
+    .mono {
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 11px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248,248,245,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font-family: 'Newsreader', serif;
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      color: #555950;
+      transition: color .2s;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .article-hero {
+      padding: 105px 0 78px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .article-hero-inner {
+      width: min(900px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    h1, h2, h3, blockquote {
+      font-family: 'Newsreader', serif;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      margin: 0;
+      max-width: 850px;
+    }
+
+    .hero-description {
+      max-width: 660px;
+      font-family: 'Newsreader', serif;
+      font-size: clamp(21px, 2.5vw, 27px);
+      line-height: 1.5;
+      color: #59636b;
+      margin: 28px 0 0;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 190px minmax(0, var(--reading));
+      justify-content: center;
+      gap: 70px;
+      padding: 80px 24px 110px;
+    }
+
+    .article-sidebar {
+      align-self: start;
+      position: sticky;
+      top: 115px;
+    }
+
+    .sidebar-title {
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .sidebar-links a:hover {
+      color: var(--ink);
+    }
+
+    .article-content {
+      min-width: 0;
+      font-size: 16px;
+      line-height: 1.95;
+      color: #535b61;
+    }
+
+    .article-content p {
+      margin: 0 0 24px;
+    }
+
+    .article-content h2 {
+      font-size: clamp(32px, 4vw, 43px);
+      line-height: 1.12;
+      letter-spacing: -.035em;
+      color: var(--ink);
+      margin: 76px 0 24px;
+      scroll-margin-top: 110px;
+    }
+
+    .article-content h3 {
+      font-size: 25px;
+      line-height: 1.25;
+      color: var(--ink);
+      margin: 35px 0 15px;
+    }
+
+    .article-content strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .article-content blockquote {
+      font-size: clamp(26px, 3.4vw, 36px);
+      line-height: 1.35;
+      letter-spacing: -.025em;
+      color: var(--ink);
+      margin: 0 0 34px;
+      padding: 28px 0 28px 28px;
+      border-left: 2px solid var(--beige);
+    }
+
+    .quote-note {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-top: 18px;
+      letter-spacing: 0;
+    }
+
+    .article-callout {
+      background: #eeefe9;
+      border: 1px solid #dfe1da;
+      padding: 28px 30px;
+      margin: 38px 0;
+    }
+
+    .article-callout .mono {
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .article-callout p {
+      color: #4f585f;
+      margin: 0;
+    }
+
+    .article-content ul {
+      padding-left: 23px;
+      margin: 0 0 28px;
+    }
+
+    .article-content li {
+      padding-left: 5px;
+      margin-bottom: 12px;
+    }
+
+    .references {
+      border-top: 1px solid var(--line);
+      margin-top: 80px;
+      padding-top: 25px;
+    }
+
+    .references h2 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    .references ol {
+      padding-left: 22px;
+      font-size: 13px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    .references li {
+      margin-bottom: 16px;
+    }
+
+    .references a {
+      color: #607b8e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .article-disclaimer {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      margin-top: 42px;
+    }
+
+    .article-end {
+      background: #222923;
+      color: #f7f8f3;
+      padding: 65px 0;
+    }
+
+    .article-end-inner {
+      width: min(800px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .article-end .mono {
+      color: #b4cbb8;
+      margin-bottom: 20px;
+    }
+
+    .article-end h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -.035em;
+      margin: 0 0 18px;
+    }
+
+    .article-end p {
+      color: #c0c5bd;
+      font-size: 14px;
+      line-height: 1.9;
+      max-width: 600px;
+      margin: 0 0 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 17px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.65);
+      transition: background .2s;
+    }
+
+    .button:hover {
+      background: rgba(255,255,255,.1);
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-name {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    @media (max-width: 850px) {
+      .article-layout {
+        grid-template-columns: minmax(0, 740px);
+        padding-top: 55px;
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+
+      .article-hero {
+        padding: 75px 0 55px;
+      }
+
+      .article-content h2 {
+        margin-top: 58px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .wrap, .article-hero-inner {
+        width: calc(100% - 36px);
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .article-layout {
+        padding: 45px 18px 75px;
+      }
+
+      .article-content {
+        font-size: 15px;
+        line-height: 1.85;
+      }
+
+      .article-content blockquote {
+        padding-left: 20px;
+      }
+
+      .article-callout {
+        padding: 22px;
+      }
+
+      .article-meta {
+        gap: 10px 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Dr. Gustavo Arias, página principal">
+        <span class="brand-mark">GA</span>
+        <span>
+          DR. GUSTAVO ARIAS<br>
+          <small style="font-size:9px;letter-spacing:.18em;font-weight:400">
+            NEUROCIRUGÍA
+          </small>
+        </span>
+      </a>
+
+      <a class="nav-link" href="index.html">
+        ← Volver a la página principal
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="article-hero">
+      <div class="article-hero-inner">
+
+        <p class="eyebrow mono">
+          <span class="dot"></span>
+          Atención centrada en el paciente
+        </p>
+
+        <h1>Decidir juntos. Comprender antes de elegir.</h1>
+
+        <p class="hero-description">
+          La mejor decisión clínica no depende únicamente de lo que sabemos
+          sobre una enfermedad, sino también de lo que importa a la persona
+          que vive con ella.
+        </p>
+
+        <div class="article-meta">
+          <span>POR DR. GUSTAVO ARIAS</span>
+          <span>NEUROCIRUGÍA</span>
+          <span>DECISIONES COMPARTIDAS</span>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="article-layout">
+
+      <aside class="article-sidebar">
+        <div class="sidebar-title mono">Contenido</div>
+
+        <nav class="sidebar-links" aria-label="Contenido del artículo">
+          <a href="#montori">Una idea que transformó mi perspectiva</a>
+          <a href="#participacion">El paciente como participante</a>
+          <a href="#numeros">Decidir con números</a>
+          <a href="#alternativas">Comprender las alternativas</a>
+          <a href="#incertidumbre">Hablar de incertidumbre</a>
+          <a href="#neurocirugia">La decisión en neurocirugía</a>
+          <a href="#filosofia">Mi filosofía de práctica</a>
+          <a href="#referencias">Referencias</a>
+        </nav>
+      </aside>
+
+      <article class="article-content">
+
+        <section id="montori">
+
+          <h2>Una idea que transformó mi perspectiva</h2>
+
+          <p>
+            El trabajo del Dr. Victor Montori, endocrinólogo e investigador
+            de Mayo Clinic, ha contribuido de manera importante al desarrollo
+            de una atención médica centrada en las personas. A través de la
+            investigación sobre medicina basada en evidencia y toma de
+            decisiones compartida, su trabajo plantea una pregunta esencial:
+            ¿cómo pueden el médico y el paciente colaborar para encontrar
+            la mejor alternativa para una situación clínica particular?
+          </p>
+
+          <p>
+            Desde la Knowledge and Evaluation Research Unit de Mayo Clinic,
+            Montori y sus colaboradores han estudiado formas de integrar
+            la evidencia científica en conversaciones clínicas que permitan
+            comprender las alternativas, sus consecuencias y aquello que
+            realmente importa al paciente. Su trabajo también aborda la
+            medicina mínimamente disruptiva: una atención que busca alcanzar
+            objetivos relevantes para la persona sin imponer una carga
+            innecesaria sobre su vida.
+          </p>
+
+          <p>
+            Esta perspectiva me parece fundamental. La atención médica
+            no debería reducirse a identificar una enfermedad y seleccionar
+            un tratamiento de manera unilateral. Es necesario comprender
+            el problema clínico, explicar las opciones razonables y reconocer
+            que las decisiones ocurren dentro de la vida de una persona,
+            con sus prioridades, responsabilidades y expectativas.
+          </p>
+
+          <p>
+            Por eso, considero la toma de decisiones compartida un principio
+            importante de mi práctica diaria como neurocirujano.
+          </p>
+
+          <div class="article-callout">
+            <div class="mono">Una pregunta fundamental</div>
+            <p>
+              ¿Qué opciones existen para mi situación, cuáles son sus ventajas
+              y desventajas, y qué probabilidades tengo de experimentar
+              cada uno de esos resultados?
+            </p>
+          </div>
+
+          <p>
+            Estas preguntas, promovidas en el trabajo de Montori sobre
+            decisiones compartidas, resumen una parte esencial de la
+            conversación entre médico y paciente.
+          </p>
+
+        </section>
+
+        <section id="participacion">
+
+          <h2>El paciente no es un espectador de su tratamiento</h2>
+
+          <p>
+            Tradicionalmente, la relación clínica ha situado al médico como
+            principal responsable de interpretar la información y recomendar
+            una intervención. El conocimiento especializado sigue siendo
+            indispensable, pero eso no significa que el paciente deba
+            permanecer al margen de una decisión que tendrá consecuencias
+            directas sobre su cuerpo, su funcionalidad y su vida cotidiana.
+          </p>
+
+          <p>
+            Informar no consiste únicamente en comunicar un diagnóstico
+            o describir el procedimiento propuesto. Significa explicar
+            qué se conoce sobre la enfermedad, cuáles son las alternativas
+            razonables, qué beneficios pueden esperarse, qué riesgos
+            existen y qué podría ocurrir si se elige una opción diferente.
+          </p>
+
+          <p>
+            También implica escuchar. Para algunas personas, el objetivo
+            prioritario será aliviar el dolor; para otras, conservar
+            determinada función neurológica, recuperar independencia,
+            regresar al trabajo o evitar una intervención si existe
+            una alternativa razonable.
+          </p>
+
+          <p>
+            Esas prioridades pueden modificar la manera en que se valoran
+            los beneficios y los riesgos. Conocerlas permite que la
+            recomendación médica responda no solamente a la enfermedad,
+            sino también a la situación particular de quien la padece.
+          </p>
+
+          <p>
+            La toma de decisiones compartida no significa trasladar toda
+            la responsabilidad al paciente ni pedirle que resuelva solo
+            un problema médico complejo. Significa poner el conocimiento
+            profesional a su disposición, ayudarle a comprenderlo y
+            construir una decisión informada en conjunto.
+          </p>
+
+        </section>
+
+        <section id="numeros">
+
+          <h2>Decidir con información, no solamente con impresiones</h2>
+
+          <p>
+            Cuando la evidencia científica lo permite, considero importante
+            comunicar los beneficios y riesgos de una manera tan objetiva
+            y cuantitativa como sea posible. Expresiones como «es muy seguro»,
+            «existe poco riesgo» o «la cirugía suele funcionar bien» pueden
+            ser insuficientes si no explicamos qué significan en términos
+            concretos.
+          </p>
+
+          <p>
+            Los números no eliminan la incertidumbre, pero pueden ayudar
+            a comprenderla. Una probabilidad expresada mediante frecuencias
+            naturales, porcentajes e intervalos de confianza puede resultar
+            más informativa que una descripción exclusivamente verbal,
+            siempre que se presente de forma comprensible y contextualizada.
+          </p>
+
+          <h3>¿Cómo podemos comunicar mejor los riesgos?</h3>
+
+          <p>
+            Pensemos en un ejemplo hipotético. Si un determinado desenlace
+            adverso ocurre en 10 de cada 100 pacientes con una estrategia
+            y en 5 de cada 100 con otra, podemos explicar que la diferencia
+            observada es de 5 casos por cada 100 pacientes.
+          </p>
+
+          <p>
+            También podemos decir que, en ese ejemplo, el riesgo pasa
+            del 10 % al 5 %. La reducción relativa es del 50 %, pero
+            la reducción absoluta es de 5 puntos porcentuales.
+            Ambas cifras describen el mismo resultado desde perspectivas
+            distintas.
+          </p>
+
+          <div class="article-callout">
+            <div class="mono">Ejemplo ilustrativo, no dato clínico</div>
+            <p>
+              Estrategia A: 10 de cada 100 pacientes presentan el desenlace.<br><br>
+              Estrategia B: 5 de cada 100 pacientes presentan el desenlace.<br><br>
+              Diferencia absoluta observada: 5 casos menos por cada
+              100 pacientes. Reducción relativa: 50 %.
+              Para interpretar correctamente esta diferencia es necesario
+              conocer el desenlace evaluado, la población estudiada,
+              la duración del seguimiento y la incertidumbre de la estimación.
+            </p>
+          </div>
+
+          <p>
+            Este ejemplo no corresponde a una intervención específica.
+            Su propósito es mostrar por qué la forma de presentar los
+            datos puede cambiar la percepción de un mismo resultado.
+          </p>
+
+          <h3>Las cifras necesitan contexto</h3>
+
+          <p>
+            En la práctica clínica, procuro que la información cuantitativa
+            responda preguntas relevantes para la decisión. Entre ellas:
+          </p>
+
+          <ul>
+            <li>
+              <strong>¿Cuál es el beneficio esperado?</strong>
+              Cuando existen datos, es importante distinguir entre la
+              probabilidad de mejorar, la magnitud de la mejoría y la
+              posibilidad de que no exista un beneficio clínicamente
+              significativo.
+            </li>
+
+            <li>
+              <strong>¿Cuáles son los riesgos?</strong>
+              Debemos describir los eventos adversos relevantes, su
+              frecuencia estimada, su gravedad y, cuando sea posible,
+              si sus consecuencias son transitorias o permanentes.
+            </li>
+
+            <li>
+              <strong>¿Durante cuánto tiempo?</strong>
+              Una probabilidad de complicación durante los primeros
+              30 días no equivale al riesgo acumulado durante cinco años.
+              El horizonte temporal forma parte de la información.
+            </li>
+
+            <li>
+              <strong>¿Qué tan confiables son los datos?</strong>
+              Los porcentajes son estimaciones, no garantías individuales.
+              Es importante explicar sus limitaciones y la incertidumbre
+              que los acompaña.
+            </li>
+
+            <li>
+              <strong>¿A quién corresponden esos resultados?</strong>
+              Los datos de una población estudiada no siempre se aplican
+              directamente a una persona con características clínicas
+              diferentes.
+            </li>
+          </ul>
+
+          <p>
+            No siempre existen cifras precisas para todas las preguntas.
+            Cuando la evidencia es insuficiente, considero más honesto
+            reconocer esa limitación que ofrecer un porcentaje aparentemente
+            exacto sin fundamento adecuado.
+          </p>
+
+        </section>
+
+        <section id="alternativas">
+
+          <h2>Explicar las opciones, incluidos sus inconvenientes</h2>
+
+          <p>
+            Una conversación clínica completa debe considerar las alternativas
+            razonables para la situación del paciente. Dependiendo del
+            diagnóstico y de la urgencia, pueden incluir tratamiento
+            quirúrgico, tratamiento no quirúrgico, vigilancia clínica
+            e imagenológica u otras intervenciones.
+          </p>
+
+          <p>
+            Cada alternativa debe analizarse en sus propios términos.
+            No basta con describir los riesgos de una cirugía sin explicar
+            los riesgos de no realizarla cuando estos sean relevantes.
+            Tampoco sería adecuado presentar el tratamiento conservador
+            como una opción equivalente si la evidencia y las circunstancias
+            clínicas no respaldan esa equivalencia.
+          </p>
+
+          <p>
+            En ocasiones, el beneficio potencial de una intervención
+            puede ser importante, pero también lo son sus complicaciones,
+            el tiempo de recuperación y las consecuencias funcionales.
+            En otras situaciones, diferir una intervención puede tener
+            consecuencias que deben explicarse con claridad.
+          </p>
+
+          <p>
+            Mi responsabilidad consiste en identificar las alternativas
+            clínicamente razonables, explicar sus ventajas y limitaciones
+            y formular una recomendación fundamentada. La decisión compartida
+            no exige fingir que todas las opciones son iguales; exige
+            que las diferencias relevantes sean comprendidas.
+          </p>
+
+        </section>
+
+        <section id="incertidumbre">
+
+          <h2>La honestidad también consiste en reconocer lo que no sabemos</h2>
+
+          <p>
+            La medicina trabaja con probabilidades. Incluso una intervención
+            apropiadamente indicada y realizada puede producir un resultado
+            distinto del esperado. Una complicación puede ocurrir pese
+            a que su probabilidad sea baja, y una evolución favorable
+            no siempre puede atribuirse exclusivamente al tratamiento.
+          </p>
+
+          <p>
+            La evidencia disponible también tiene límites. Los estudios
+            pueden incluir pocos pacientes, presentar periodos de
+            seguimiento insuficientes o no representar adecuadamente
+            a la población que tenemos delante. En determinadas situaciones,
+            varias alternativas pueden ser razonables porque la investigación
+            no ha demostrado una superioridad clara de una sobre las demás.
+          </p>
+
+          <p>
+            Por eso, comunicar riesgos no significa prometer resultados
+            ni generar una falsa sensación de precisión. Significa
+            distinguir lo que conocemos con relativa confianza de aquello
+            que continúa siendo incierto.
+          </p>
+
+          <p>
+            Una conversación honesta debe permitir que el paciente
+            comprenda tanto las posibilidades de beneficio como las
+            limitaciones del conocimiento disponible.
+          </p>
+
+        </section>
+
+        <section id="neurocirugia">
+
+          <h2>La toma de decisiones compartida en neurocirugía</h2>
+
+          <p>
+            En neurocirugía, las decisiones pueden tener consecuencias
+            importantes sobre la movilidad, el lenguaje, la sensibilidad,
+            la cognición, la independencia y la calidad de vida. La valoración
+            de una intervención no debe limitarse a determinar si una
+            operación es técnicamente posible.
+          </p>
+
+          <p>
+            También es necesario considerar qué beneficio puede esperarse,
+            cuáles son los riesgos relevantes, qué alternativas existen
+            y qué resultados son importantes para el paciente. La anatomía,
+            la evolución clínica, las enfermedades concomitantes y la
+            evidencia disponible influyen en la recomendación, pero
+            las prioridades individuales también importan.
+          </p>
+
+          <p>
+            En una persona con enfermedad degenerativa de la columna,
+            por ejemplo, el objetivo puede ser aliviar el dolor, mejorar
+            la función o reducir determinadas limitaciones. La decisión
+            requiere valorar la correlación entre los síntomas y los
+            hallazgos, la evolución del padecimiento, los tratamientos
+            previos y la relación entre los beneficios esperados y los
+            riesgos de las alternativas.
+          </p>
+
+          <p>
+            Ante una lesión intracraneal, la conversación puede ser
+            diferente. Según el diagnóstico y la situación clínica,
+            puede ser necesario discutir la urgencia, la evolución
+            esperada, las posibilidades de intervención y las consecuencias
+            de retrasar o no realizar el tratamiento.
+          </p>
+
+          <p>
+            Estos ejemplos no admiten una regla única. La información
+            debe adaptarse al diagnóstico, la evidencia y las circunstancias
+            de cada paciente. En situaciones de urgencia, el tiempo
+            disponible y la capacidad del paciente para participar
+            también pueden modificar la manera de abordar la decisión.
+          </p>
+
+          <p>
+            La finalidad no es prolongar indefinidamente una conversación
+            ni convertir cada decisión en una negociación. Es dedicar
+            el espacio necesario para explicar lo que importa, responder
+            preguntas y establecer un plan clínicamente apropiado.
+          </p>
+
+        </section>
+
+        <section id="filosofia">
+
+          <h2>Mi filosofía: informar, recomendar y decidir en conjunto</h2>
+
+          <p>
+            Considero que una buena práctica neuroquirúrgica requiere
+            algo más que conocimiento técnico. Exige comunicar con claridad,
+            reconocer los límites de la evidencia y comprender que cada
+            paciente tiene circunstancias y prioridades propias.
+          </p>
+
+          <p>
+            En mi práctica diaria, busco explicar las alternativas
+            terapéuticas, sus beneficios, riesgos y pronósticos de la
+            manera más objetiva posible. Cuando la información científica
+            permite cuantificar los resultados, considero importante
+            utilizar números y porcentajes comprensibles, sin ocultar
+            la incertidumbre que existe detrás de ellos.
+          </p>
+
+          <p>
+            Al mismo tiempo, entiendo que mi responsabilidad profesional
+            no se limita a enumerar opciones. También debo interpretar
+            la evidencia, identificar las alternativas apropiadas para
+            cada situación y ofrecer una recomendación fundamentada
+            en el conocimiento científico y el juicio clínico.
+          </p>
+
+          <p>
+            La decisión final debe considerar, además, los valores,
+            objetivos y preferencias de la persona informada. Una
+            conversación de calidad permite comprender no solo qué
+            recomienda el médico, sino por qué lo recomienda, qué
+            se espera conseguir y qué incertidumbres permanecen.
+          </p>
+
+          <p>
+            No siempre es posible eliminar la incertidumbre. Sí es
+            posible procurar que las decisiones se tomen con información
+            suficiente, expectativas realistas y respeto por la autonomía
+            del paciente.
+          </p>
+
+          <div class="article-callout">
+            <div class="mono">Un principio de práctica</div>
+            <p>
+              Mi objetivo es que cada paciente comprenda su situación,
+              conozca las alternativas clínicamente razonables y pueda
+              participar en una decisión informada, fundamentada en
+              la evidencia y coherente con sus prioridades.
+            </p>
+          </div>
+
+        </section>
+
+        <section class="references" id="referencias">
+
+          <h2>Referencias para profundizar</h2>
+
+          <ol>
+
+            <li>
+              Montori VM, Kunneman M, Hargraves I, Brito JP.
+              Shared decision making and the internist.
+              <em>European Journal of Internal Medicine.</em>
+              2017;37:1–6.
+              <br>
+              <a href="https://doi.org/10.1016/j.ejim.2016.09.018"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Consultar publicación original ↗
+              </a>
+            </li>
+
+            <li>
+              Montori VM, Brito JP, Murad MH.
+              The optimal practice of evidence-based medicine:
+              incorporating patient preferences in practice guidelines.
+              <em>JAMA.</em> 2013;310(23):2503–2504.
+              <br>
+              <a href="https://doi.org/10.1001/jama.2013.281422"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Consultar publicación original ↗
+              </a>
+            </li>
+
+            <li>
+              Elwyn G, Frosch D, Thomson R, et al.
+              Shared decision making: a model for clinical practice.
+              <em>Journal of General Internal Medicine.</em>
+              2012;27:1361–1367.
+              <br>
+              <a href="https://doi.org/10.1007/s11606-012-2077-6"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Consultar publicación original ↗
+              </a>
+            </li>
+
+            <li>
+              Stacey D, Légaré F, Lewis K, et al.
+              Decision aids for people facing health treatment or
+              screening decisions.
+              <em>Cochrane Database of Systematic Reviews.</em>
+              2017;4:CD001431.
+              <br>
+              <a href="https://doi.org/10.1002/14651858.CD001431.pub5"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Consultar revisión sistemática ↗
+              </a>
+            </li>
+
+            <li>
+              Knowledge and Evaluation Research Unit.
+              Mayo Clinic.
+              <br>
+              <a href="https://www.mayo.edu/research/labs/knowledge-evaluation-research-unit/overview"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Conocer el trabajo del equipo de investigación ↗
+              </a>
+            </li>
+
+          </ol>
+
+          <p class="article-disclaimer">
+            Este artículo tiene fines informativos y académicos.
+            No sustituye una valoración médica individual ni constituye
+            una recomendación terapéutica para un caso concreto.
+            Las decisiones clínicas deben considerar la evidencia
+            disponible, las circunstancias particulares y la valoración
+            del profesional responsable.
+          </p>
+
+        </section>
+
+      </article>
+    </div>
+
+    <section class="article-end">
+      <div class="article-end-inner">
+
+        <div class="mono">
+          Neurocirugía · Guadalajara, México
+        </div>
+
+        <h2>
+          Comprender las opciones<br>
+          también forma parte del tratamiento.
+        </h2>
+
+        <p>
+          Conoce más sobre mi enfoque profesional y los principios
+          que orientan mi práctica neuroquirúrgica.
+        </p>
+
+        <a class="button" href="index.html#enfoque">
+          Volver a mi página principal <span>↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span class="footer-name">DR. GUSTAVO ARIAS</span>
+      <span>Neurocirugía · Guadalajara, México</span>
+      <span>
+        © <span id="year"></span> · Información médica con rigor y claridad.
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
