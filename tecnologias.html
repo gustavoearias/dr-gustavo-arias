@@ -1,0 +1,1861 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tecnología de vanguardia | Dr. Gustavo Arias</title>
+
+  <meta
+    name="description"
+    content="Conoce las técnicas y tecnologías de la neurocirugía moderna: microcirugía, neuronavegación, neuromonitoreo, cirugía de columna de mínima invasión, prótesis discales y reconstrucción craneal."
+  >
+
+  <meta name="theme-color" content="#f4f3f0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --paper: #f4f3f0;
+      --ink: #202832;
+      --muted: #6f777e;
+      --line: #d8d9d7;
+      --accent: #6e8798;
+      --soft: #e6e9eb;
+      --beige: #d7c6b2;
+      --white: #ffffff;
+
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+      --mono: "DM Mono", monospace;
+
+      --page-width: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .mono {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .wrap {
+      width: min(var(--page-width), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    /* NAVEGACIÓN */
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 243, 240, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-role {
+      margin-top: 5px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-back {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover {
+      color: var(--ink);
+    }
+
+    /* ENCABEZADO */
+
+    .page-hero {
+      padding: 105px 0 75px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      color: var(--accent);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 28px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 8vw, 88px);
+      font-weight: 400;
+      letter-spacing: -0.065em;
+      line-height: 0.99;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin-bottom: 36px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      color: var(--muted);
+    }
+
+    /* ÍNDICE */
+
+    .contents {
+      padding: 52px 0 58px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-label {
+      margin-bottom: 24px;
+      color: var(--muted);
+    }
+
+    .contents-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 28px;
+    }
+
+    .contents-link {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contents-link:hover {
+      color: var(--accent);
+    }
+
+    .contents-number {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+
+    .contents-title {
+      font-family: var(--serif);
+      font-size: 21px;
+      line-height: 1.25;
+    }
+
+    /* INTRODUCCIÓN */
+
+    .intro {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 60px;
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .side-label {
+      color: var(--muted);
+    }
+
+    .intro h2 {
+      max-width: 800px;
+      margin-bottom: 25px;
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+    }
+
+    .intro p {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    /* SECCIONES DE TECNOLOGÍA */
+
+    .technology-section {
+      padding: 95px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .technology-header {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 45px;
+      margin-bottom: 45px;
+    }
+
+    .technology-number {
+      color: var(--accent);
+    }
+
+    .technology-header h2 {
+      max-width: 850px;
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: clamp(35px, 5vw, 58px);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 1.08;
+    }
+
+    .technology-lead {
+      max-width: 780px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* IMAGEN PRINCIPAL */
+
+    .feature-image {
+      position: relative;
+      margin: 0 0 44px;
+      overflow: hidden;
+      background: var(--soft);
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .feature-image:hover img {
+      transform: scale(1.015);
+    }
+
+    .image-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 0;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    /* TEXTO Y TARJETAS */
+
+    .technology-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 0.72fr);
+      gap: 65px;
+      align-items: start;
+    }
+
+    .article-copy h3 {
+      margin: 34px 0 14px;
+      font-family: var(--serif);
+      font-size: 29px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .article-copy h3:first-child {
+      margin-top: 0;
+    }
+
+    .article-copy p {
+      color: #4f5961;
+    }
+
+    .article-copy ul {
+      padding-left: 20px;
+      color: #4f5961;
+    }
+
+    .article-copy li {
+      margin-bottom: 9px;
+      padding-left: 4px;
+    }
+
+    .info-card {
+      padding: 30px;
+      background: var(--soft);
+      border: 1px solid #dce0e2;
+    }
+
+    .info-card .mono {
+      display: block;
+      margin-bottom: 17px;
+      color: var(--accent);
+    }
+
+    .info-card h3 {
+      margin-bottom: 15px;
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+    }
+
+    .info-card p {
+      margin-bottom: 22px;
+      color: #59636a;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .manufacturer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      font-size: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 5px;
+    }
+
+    .manufacturer-link:hover {
+      color: var(--accent);
+    }
+
+    /* GALERÍA */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .gallery figure {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      background: var(--soft);
+    }
+
+    .gallery figcaption {
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* AVISO CLÍNICO */
+
+    .clinical-note {
+      margin-top: 35px;
+      padding: 25px 28px;
+      border-left: 2px solid var(--accent);
+      background: rgba(230, 233, 235, 0.5);
+    }
+
+    .clinical-note .mono {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .clinical-note p {
+      margin-bottom: 0;
+      color: #4f5961;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* REFERENCIAS */
+
+    .references {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .references h2 {
+      margin-bottom: 18px;
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+    }
+
+    .references-intro {
+      max-width: 700px;
+      margin-bottom: 35px;
+      color: var(--muted);
+    }
+
+    .reference-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: reference;
+    }
+
+    .reference-list li {
+      counter-increment: reference;
+      display: grid;
+      grid-template-columns: 35px minmax(0, 1fr);
+      gap: 15px;
+      padding: 19px 0;
+      border-top: 1px solid var(--line);
+      color: #59636a;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .reference-list li::before {
+      content: "0" counter(reference);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+
+    .reference-list a {
+      overflow-wrap: anywhere;
+      color: var(--ink);
+      text-decoration-color: var(--line);
+      text-underline-offset: 3px;
+    }
+
+    /* CIERRE */
+
+    .closing {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .closing h2 {
+      max-width: 750px;
+      margin: 0 auto 25px;
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 60px);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 1.1;
+    }
+
+    .closing p {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    .primary-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 13px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .primary-link:hover {
+      background: var(--accent);
+    }
+
+    /* PIE DE PÁGINA */
+
+    .site-footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-link {
+      color: var(--muted);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: var(--ink);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .wrap {
+        width: min(100% - 36px, var(--page-width));
+      }
+
+      .page-hero {
+        padding: 75px 0 55px;
+      }
+
+      .contents-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro,
+      .technology-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .intro {
+        padding: 65px 0;
+      }
+
+      .technology-section {
+        padding: 70px 0;
+      }
+
+      .technology-body {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .feature-image img {
+        height: 320px;
+      }
+
+      .gallery img {
+        height: 220px;
+      }
+
+      .info-card {
+        padding: 25px;
+      }
+
+      .references {
+        padding: 70px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .nav-back {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 49px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-meta {
+        gap: 10px 16px;
+      }
+
+      .feature-image img {
+        height: 250px;
+      }
+
+      .image-caption {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .gallery img {
+        height: 250px;
+      }
+
+      .closing {
+        padding: 75px 0;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGACIÓN -->
+
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+
+      <a class="brand" href="index.html">
+        <span class="brand-name">Dr. Gustavo Arias</span>
+        <span class="brand-role">Neurocirugía</span>
+      </a>
+
+      <a class="nav-back" href="index.html">
+        ← Volver al inicio
+      </a>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+      <div class="wrap">
+
+        <div class="eyebrow mono">
+          Neurocirugía · Innovación · Precisión
+        </div>
+
+        <h1>
+          Tecnología<br>
+          de vanguardia.
+        </h1>
+
+        <p class="hero-description">
+          La neurocirugía evoluciona constantemente. Las técnicas
+          quirúrgicas, los sistemas de visualización y las herramientas
+          de planificación permiten abordar problemas complejos con
+          nuevas posibilidades. Conocer sus beneficios y limitaciones
+          es fundamental para elegir el tratamiento adecuado para cada paciente.
+        </p>
+
+        <div class="hero-meta mono">
+          <span>Dr. Gustavo Arias</span>
+          <span>Neurocirugía</span>
+          <span>Tecnología aplicada a la práctica clínica</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ÍNDICE -->
+
+    <section class="contents">
+      <div class="wrap">
+
+        <div class="section-label mono">
+          Explora las tecnologías
+        </div>
+
+        <nav class="contents-grid" aria-label="Contenido de la página">
+
+          <a class="contents-link" href="#microcirugia">
+            <span class="contents-number">01</span>
+            <span class="contents-title">Microcirugía y visualización</span>
+          </a>
+
+          <a class="contents-link" href="#neuronavegacion">
+            <span class="contents-number">02</span>
+            <span class="contents-title">Neuronavegación</span>
+          </a>
+
+          <a class="contents-link" href="#neuromonitoreo">
+            <span class="contents-number">03</span>
+            <span class="contents-title">Neuromonitoreo y seguridad</span>
+          </a>
+
+          <a class="contents-link" href="#minima-invasion">
+            <span class="contents-number">04</span>
+            <span class="contents-title">Cirugía de columna de mínima invasión</span>
+          </a>
+
+          <a class="contents-link" href="#implantes">
+            <span class="contents-number">05</span>
+            <span class="contents-title">Prótesis e implantes</span>
+          </a>
+
+          <a class="contents-link" href="#craneoplastia">
+            <span class="contents-number">06</span>
+            <span class="contents-title">Reconstrucción craneal</span>
+          </a>
+
+        </nav>
+
+      </div>
+    </section>
+
+
+    <!-- INTRODUCCIÓN -->
+
+    <section class="intro wrap">
+
+      <div class="side-label mono">
+        Una práctica en evolución
+      </div>
+
+      <div>
+
+        <h2>
+          La innovación tiene sentido cuando mejora las posibilidades
+          de tratamiento.
+        </h2>
+
+        <p>
+          La tecnología no sustituye el conocimiento médico ni el juicio
+          clínico. Su valor depende de cómo se integra en la atención:
+          desde la selección del procedimiento hasta la planificación,
+          la ejecución quirúrgica y el seguimiento.
+        </p>
+
+        <p>
+          Por eso, cada herramienta debe evaluarse de acuerdo con su
+          utilidad clínica, la evidencia disponible, sus limitaciones
+          y las necesidades particulares de cada paciente.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- 01. MICROCIRUGÍA -->
+
+    <section class="technology-section" id="microcirugia">
+      <div class="wrap">
+
+        <header class="technology-header">
+
+          <div class="technology-number mono">
+            01 / Visualización
+          </div>
+
+          <div>
+
+            <h2>
+              Microcirugía y visualización avanzada
+            </h2>
+
+            <p class="technology-lead">
+              En neurocirugía, trabajar sobre estructuras pequeñas y
+              delicadas exige una visualización adecuada. Los microscopios
+              quirúrgicos amplían el campo operatorio, mejoran la
+              iluminación y pueden incorporar tecnologías que aportan
+              información adicional durante determinados procedimientos.
+            </p>
+
+          </div>
+
+        </header>
+
+
+        <figure class="feature-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1800&q=85"
+            alt="Imagen médica relacionada con neurociencia y tecnología clínica"
+            loading="lazy"
+          >
+
+          <figcaption class="image-caption">
+            <span>Visualización en neurocirugía</span>
+            <span>Imagen ilustrativa</span>
+          </figcaption>
+
+        </figure>
+
+
+        <div class="technology-body">
+
+          <div class="article-copy">
+
+            <h3>Microscopía quirúrgica</h3>
+
+            <p>
+              Los microscopios quirúrgicos permiten ampliar e iluminar
+              el campo operatorio para facilitar la identificación de
+              estructuras anatómicas y la realización de maniobras
+              microquirúrgicas. Su utilidad depende del procedimiento,
+              la anatomía y la experiencia del equipo quirúrgico.
+            </p>
+
+            <p>
+              Fabricantes como ZEISS desarrollan sistemas destinados a
+              neurocirugía, con distintas configuraciones ópticas,
+              iluminación y herramientas de visualización.
+            </p>
+
+            <h3>Fluorescencia con verde de indocianina</h3>
+
+            <p>
+              La angiografía intraoperatoria con verde de indocianina
+              (ICG) permite visualizar el paso del colorante por los
+              vasos sanguíneos mediante sistemas ópticos compatibles.
+              En procedimientos neurovasculares seleccionados puede
+              aportar información sobre la permeabilidad vascular y
+              la circulación en el campo operatorio.
+            </p>
+
+            <p>
+              La fluorescencia debe interpretarse junto con la anatomía,
+              las imágenes preoperatorias y los demás hallazgos
+              intraoperatorios. No sustituye automáticamente otros
+              métodos de evaluación vascular.
+            </p>
+
+            <h3>Otras herramientas de fluorescencia</h3>
+
+            <p>
+              En determinados procedimientos tumorales pueden utilizarse
+              agentes fluorescentes, como el ácido 5-aminolevulínico
+              (5-ALA), o fluoresceína, de acuerdo con la indicación,
+              el protocolo y el sistema de visualización disponible.
+              Su uso y sus aplicaciones son distintos de los del verde
+              de indocianina.
+            </p>
+
+          </div>
+
+
+          <aside class="info-card">
+
+            <span class="mono">Tecnología relacionada</span>
+
+            <h3>Microscopios neuroquirúrgicos ZEISS</h3>
+
+            <p>
+              Los sistemas de la familia PENTERO y KINEVO incorporan
+              distintas soluciones de visualización para procedimientos
+              neuroquirúrgicos. Las funciones dependen del modelo y
+              de su configuración.
+            </p>
+
+            <a
+              class="manufacturer-link"
+              href="https://www.zeiss.com/meditec/en/products/surgical-microscopes/neurosurgical-microscopes.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explorar ZEISS ↗
+            </a>
+
+            <br><br>
+
+            <a
+              class="manufacturer-link"
+              href="https://www.zeiss.com/meditec/en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sitio oficial de ZEISS ↗
+            </a>
+
+          </aside>
+
+        </div>
+
+        <div class="clinical-note">
+
+          <span class="mono">Consideración clínica</span>
+
+          <p>
+            La disponibilidad de fluorescencia, sus indicaciones y las
+            funciones específicas de cada microscopio varían según el
+            equipo. La selección debe responder al procedimiento y
+            a las necesidades clínicas.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 02. NEURONAVEGACIÓN -->
+
+    <section class="technology-section" id="neuronavegacion">
+      <div class="wrap">
+
+        <header class="technology-header">
+
+          <div class="technology-number mono">
+            02 / Planificación
+          </div>
+
+          <div>
+
+            <h2>
+              Neuronavegación y planificación quirúrgica
+            </h2>
+
+            <p class="technology-lead">
+              La neuronavegación relaciona las imágenes médicas del
+              paciente con su anatomía durante la intervención. Puede
+              ayudar a planificar trayectorias, localizar lesiones
+              y orientar determinados abordajes quirúrgicos.
+            </p>
+
+          </div>
+
+        </header>
+
+
+        <figure class="feature-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1800&q=85"
+            alt="Entorno clínico y tecnología médica"
+            loading="lazy"
+          >
+
+          <figcaption class="image-caption">
+            <span>Planificación y orientación anatómica</span>
+            <span>Imagen ilustrativa</span>
+          </figcaption>
+
+        </figure>
+
+
+        <div class="technology-body">
+
+          <div class="article-copy">
+
+            <h3>¿Cómo funciona?</h3>
+
+            <p>
+              Los sistemas de neuronavegación utilizan estudios de
+              imagen, como resonancia magnética o tomografía, para
+              construir una referencia espacial de la anatomía.
+              Mediante sistemas de seguimiento y registro, el cirujano
+              puede relacionar la posición de los instrumentos con
+              las imágenes preoperatorias.
+            </p>
+
+            <h3>Aplicaciones en neurocirugía</h3>
+
+            <ul>
+              <li>Planificación de abordajes a lesiones intracraneales.</li>
+              <li>Orientación durante biopsias cerebrales seleccionadas.</li>
+              <li>Localización de lesiones y estructuras anatómicas.</li>
+              <li>Apoyo en procedimientos de base de cráneo.</li>
+              <li>Planificación de determinadas intervenciones de columna.</li>
+            </ul>
+
+            <h3>La importancia de reconocer sus límites</h3>
+
+            <p>
+              La navegación depende de la calidad de las imágenes y
+              de la precisión del registro. Durante una cirugía
+              intracraneal, el desplazamiento de los tejidos puede
+              producir diferencias entre la anatomía real y las
+              imágenes preoperatorias. Este fenómeno, conocido como
+              desplazamiento cerebral, debe tenerse en cuenta al
+              interpretar la información del sistema.
+            </p>
+
+          </div>
+
+
+          <aside class="info-card">
+
+            <span class="mono">Tecnología relacionada</span>
+
+            <h3>Neuronavegación Brainlab</h3>
+
+            <p>
+              Brainlab desarrolla plataformas de planificación y
+              navegación para neurocirugía craneal y espinal.
+              Las capacidades dependen del sistema, los accesorios
+              y la configuración disponibles.
+            </p>
+
+            <a
+              class="manufacturer-link"
+              href="https://www.brainlab.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explorar Brainlab ↗
+            </a>
+
+          </aside>
+
+        </div>
+
+        <div class="clinical-note">
+
+          <span class="mono">Consideración clínica</span>
+
+          <p>
+            La neuronavegación complementa la planificación y la
+            orientación anatómica, pero no reemplaza el conocimiento
+            neuroanatómico, la valoración directa del campo operatorio
+            ni otras herramientas de control cuando están indicadas.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 03. NEUROMONITOREO -->
+
+    <section class="technology-section" id="neuromonitoreo">
+      <div class="wrap">
+
+        <header class="technology-header">
+
+          <div class="technology-number mono">
+            03 / Seguridad
+          </div>
+
+          <div>
+
+            <h2>
+              Neuromonitoreo transoperatorio
+            </h2>
+
+            <p class="technology-lead">
+              Durante determinadas cirugías de columna, la monitorización
+              neurofisiológica permite evaluar continuamente o de forma
+              seriada determinadas respuestas funcionales del sistema
+              nervioso. Sus cambios pueden alertar al equipo sobre una
+              posible alteración y motivar una reevaluación inmediata.
+            </p>
+
+          </div>
+
+        </header>
+
+
+        <figure class="feature-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1800&q=85"
+            alt="Personal sanitario en un entorno clínico"
+            loading="lazy"
+          >
+
+          <figcaption class="image-caption">
+            <span>Monitorización durante procedimientos quirúrgicos</span>
+            <span>Imagen ilustrativa</span>
+          </figcaption>
+
+        </figure>
+
+
+        <div class="technology-body">
+
+          <div class="article-copy">
+
+            <h3>¿Qué se monitoriza?</h3>
+
+            <p>
+              Según la intervención, pueden utilizarse potenciales
+              evocados somatosensoriales, potenciales evocados motores,
+              electromiografía y otras técnicas neurofisiológicas.
+              Cada modalidad evalúa componentes funcionales diferentes.
+            </p>
+
+            <h3>Aplicaciones en cirugía de columna</h3>
+
+            <ul>
+              <li>Cirugía de deformidades vertebrales.</li>
+              <li>Instrumentación en casos seleccionados.</li>
+              <li>Procedimientos con riesgo para estructuras neurales.</li>
+              <li>Cirugía de lesiones que comprometen la médula espinal.</li>
+              <li>Intervenciones en las que el equipo considera pertinente una vigilancia funcional.</li>
+            </ul>
+
+            <h3>¿Cómo puede contribuir a la seguridad?</h3>
+
+            <p>
+              Los cambios significativos en las señales pueden
+              proporcionar una advertencia temprana de una posible
+              alteración funcional. De acuerdo con el tipo de cambio
+              y el contexto clínico, el equipo puede revisar la
+              posición del paciente, la instrumentación, la perfusión,
+              los factores anestésicos y las maniobras quirúrgicas.
+            </p>
+
+            <p>
+              Su utilidad depende de la selección apropiada de
+              modalidades, la calidad técnica, la interpretación
+              oportuna de las señales y la existencia de protocolos
+              de respuesta ante las alertas.
+            </p>
+
+            <h3>Integración con otras herramientas</h3>
+
+            <p>
+              El neuromonitoreo puede combinarse con fluoroscopia,
+              navegación o sistemas de imagen intraoperatoria.
+              Estas herramientas aportan información diferente:
+              unas ayudan a identificar la anatomía y la posición
+              de los instrumentos; el neuromonitoreo aporta
+              información funcional.
+            </p>
+
+          </div>
+
+
+          <aside class="info-card">
+
+            <span class="mono">Objetivo clínico</span>
+
+            <h3>Información funcional durante la cirugía</h3>
+
+            <p>
+              La monitorización permite detectar determinados cambios
+              neurofisiológicos durante procedimientos seleccionados.
+              La interpretación de las señales requiere coordinación
+              entre cirugía, neurofisiología y anestesia.
+            </p>
+
+            <p>
+              Ningún sistema elimina por completo el riesgo de lesión
+              neurológica. El beneficio depende del procedimiento,
+              la implementación y la respuesta del equipo.
+            </p>
+
+          </aside>
+
+        </div>
+
+        <div class="clinical-note">
+
+          <span class="mono">Consideración clínica</span>
+
+          <p>
+            La monitorización neurofisiológica no detecta todas las
+            lesiones posibles y puede presentar falsos positivos,
+            falsos negativos o limitaciones técnicas. No sustituye
+            una técnica quirúrgica cuidadosa ni la valoración clínica.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 04. COLUMNA DE MÍNIMA INVASIÓN -->
+
+    <section class="technology-section" id="minima-invasion">
+      <div class="wrap">
+
+        <header class="technology-header">
+
+          <div class="technology-number mono">
+            04 / Columna
+          </div>
+
+          <div>
+
+            <h2>
+              Cirugía de columna de mínima invasión
+            </h2>
+
+            <p class="technology-lead">
+              Los abordajes de mínima invasión buscan alcanzar el
+              objetivo quirúrgico reduciendo, cuando es apropiado,
+              la lesión de los tejidos que rodean la columna.
+              La elección de la técnica depende del diagnóstico,
+              la anatomía y los objetivos del tratamiento.
+            </p>
+
+          </div>
+
+        </header>
+
+
+        <figure class="feature-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=1800&q=85"
+            alt="Entorno de tecnología y procedimientos médicos"
+            loading="lazy"
+          >
+
+          <figcaption class="image-caption">
+            <span>Técnicas quirúrgicas de columna</span>
+            <span>Imagen ilustrativa</span>
+          </figcaption>
+
+        </figure>
+
+
+        <div class="technology-body">
+
+          <div class="article-copy">
+
+            <h3>Abordajes de mínima invasión</h3>
+
+            <p>
+              Algunas técnicas utilizan incisiones pequeñas,
+              separadores tubulares e instrumentos diseñados para
+              trabajar a través de corredores anatómicos específicos.
+              En pacientes seleccionados, estos abordajes pueden
+              reducir la disección muscular y la lesión de tejidos
+              blandos.
+            </p>
+
+            <h3>Tornillos pediculares percutáneos</h3>
+
+            <p>
+              La instrumentación percutánea permite colocar tornillos
+              pediculares mediante incisiones pequeñas y trayectorias
+              planificadas. Puede utilizarse en determinados
+              procedimientos de estabilización vertebral y artrodesis.
+            </p>
+
+            <p>
+              La colocación adecuada requiere una planificación
+              anatómica rigurosa y confirmación de la trayectoria
+              mediante los métodos de imagen correspondientes.
+              La fluoroscopia, la navegación y otras tecnologías
+              pueden emplearse según el caso y los recursos disponibles.
+            </p>
+
+            <h3>Artrodesis lumbar mínimamente invasiva</h3>
+
+            <p>
+              Técnicas como la fusión intersomática lumbar transforaminal
+              mínimamente invasiva (MI-TLIF) permiten realizar
+              determinados procedimientos de descompresión,
+              colocación de implantes y estabilización a través
+              de abordajes específicos.
+            </p>
+
+            <h3>¿Cuáles son sus beneficios potenciales?</h3>
+
+            <ul>
+              <li>Menor disección de determinados tejidos musculares.</li>
+              <li>Posible reducción de la pérdida sanguínea en casos seleccionados.</li>
+              <li>Posibilidad de reducir el dolor relacionado con la lesión de tejidos blandos.</li>
+              <li>Recuperación funcional potencialmente más rápida en determinados pacientes.</li>
+            </ul>
+
+            <p>
+              Estos beneficios no son universales. Los resultados
+              dependen del procedimiento, la experiencia del equipo,
+              las características del paciente y la indicación clínica.
+              Algunas intervenciones complejas pueden requerir
+              abordajes convencionales.
+            </p>
+
+          </div>
+
+
+          <aside class="info-card">
+
+            <span class="mono">Planificación quirúrgica</span>
+
+            <h3>Precisión en cada abordaje</h3>
+
+            <p>
+              La selección del corredor quirúrgico, el posicionamiento
+              del paciente, la planificación de las trayectorias
+              y la confirmación de la instrumentación son componentes
+              esenciales de la cirugía de columna.
+            </p>
+
+            <p>
+              Las herramientas de imagen, navegación y monitorización
+              pueden complementar el procedimiento cuando están indicadas.
+            </p>
+
+          </aside>
+
+        </div>
+
+
+        <div class="gallery">
+
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=1000&q=85"
+              alt="Imagen médica ilustrativa"
+              loading="lazy"
+            >
+            <figcaption>
+              La planificación anatómica es esencial para seleccionar
+              el abordaje adecuado.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85"
+              alt="Profesionales sanitarios trabajando con tecnología clínica"
+              loading="lazy"
+            >
+            <figcaption>
+              La selección de instrumentos y técnicas depende de
+              las necesidades de cada procedimiento.
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <div class="clinical-note">
+
+          <span class="mono">Consideración clínica</span>
+
+          <p>
+            La cirugía de mínima invasión no es apropiada para todos
+            los pacientes ni para todas las enfermedades de la columna.
+            Una incisión menor no garantiza por sí misma mejores
+            resultados: la indicación correcta es fundamental.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 05. PRÓTESIS E IMPLANTES -->
+
+    <section class="technology-section" id="implantes">
+      <div class="wrap">
+
+        <header class="technology-header">
+
+          <div class="technology-number mono">
+            05 / Reconstrucción
+          </div>
+
+          <div>
+
+            <h2>
+              Prótesis discales e implantes de nueva generación
+            </h2>
+
+            <p class="technology-lead">
+              Los implantes vertebrales cumplen funciones diferentes:
+              sustituir estructuras, mantener espacios, estabilizar
+              segmentos o favorecer la fusión ósea. Su selección
+              requiere valorar la anatomía, el diagnóstico y los
+              objetivos de la intervención.
+            </p>
+
+          </div>
+
+        </header>
+
+
+        <figure class="feature-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1800&q=85"
+            alt="Tecnología médica e investigación"
+            loading="lazy"
+          >
+
+          <figcaption class="image-caption">
+            <span>Implantes y soluciones reconstructivas</span>
+            <span>Imagen ilustrativa</span>
+          </figcaption>
+
+        </figure>
+
+
+        <div class="technology-body">
+
+          <div class="article-copy">
+
+            <h3>Prótesis discales cervicales</h3>
+
+            <p>
+              La artroplastia cervical consiste en sustituir un disco
+              intervertebral por un implante diseñado para conservar
+              movimiento en el segmento tratado. En pacientes
+              cuidadosamente seleccionados puede ser una alternativa
+              a determinadas técnicas de artrodesis.
+            </p>
+
+            <p>
+              La elección depende, entre otros factores, del nivel
+              afectado, la anatomía, la movilidad, la estabilidad,
+              la presencia de enfermedad facetaria y las características
+              clínicas del paciente.
+            </p>
+
+            <h3>Cajas intersomáticas y materiales</h3>
+
+            <p>
+              Las cajas intersomáticas pueden fabricarse con materiales
+              como PEEK o titanio. Algunos diseños incorporan superficies
+              porosas o estructuras destinadas a favorecer la integración
+              ósea. La elección del implante debe considerar su diseño,
+              la indicación y la evidencia clínica disponible.
+            </p>
+
+            <h3>Instrumentación vertebral</h3>
+
+            <p>
+              Los sistemas de tornillos, barras y otros implantes
+              permiten estabilizar segmentos de la columna cuando
+              está indicado. Las características del sistema deben
+              seleccionarse de acuerdo con el procedimiento y
+              las necesidades biomecánicas del paciente.
+            </p>
+
+            <h3>Innovación con criterio clínico</h3>
+
+            <p>
+              Un material más reciente o un diseño más sofisticado
+              no es necesariamente superior en todas las situaciones.
+              La decisión debe considerar los resultados clínicos,
+              las complicaciones, la durabilidad, la evidencia
+              disponible y la experiencia con cada sistema.
+            </p>
+
+          </div>
+
+
+          <aside class="info-card">
+
+            <span class="mono">Información del fabricante</span>
+
+            <h3>Prótesis cervical Prestige LP</h3>
+
+            <p>
+              Un ejemplo de prótesis discal cervical diseñada para
+              determinados pacientes candidatos a artroplastia.
+              La información del fabricante describe sus características
+              y las indicaciones autorizadas para el producto.
+            </p>
+
+            <a
+              class="manufacturer-link"
+              href="https://www.medtronic.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explorar Medtronic ↗
+            </a>
+
+            <br><br>
+
+            <a
+              class="manufacturer-link"
+              href="https://www.medtronic.com/en-us/healthcare-professionals/products/spinal-orthopedic/cervical-spine/artificial-discs/prestige-lp-cervical-disc.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Consultar Prestige LP ↗
+            </a>
+
+          </aside>
+
+        </div>
+
+        <div class="clinical-note">
+
+          <span class="mono">Consideración clínica</span>
+
+          <p>
+            Las prótesis discales y los sistemas de artrodesis tienen
+            indicaciones y limitaciones distintas. La elección debe
+            individualizarse y basarse en la evaluación clínica,
+            la anatomía y la evidencia disponible.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 06. CRANEOPLASTIA -->
+
+    <section class="technology-section" id="craneoplastia">
+      <div class="wrap">
+
+        <header class="technology-header">
+
+          <div class="technology-number mono">
+            06 / Reconstrucción
+          </div>
+
+          <div>
+
+            <h2>
+              Craneoplastia y reconstrucción craneal
+            </h2>
+
+            <p class="technology-lead">
+              La reconstrucción de defectos craneales puede requerir
+              materiales y diseños personalizados. La planificación
+              tridimensional y la fabricación asistida por diseño
+              digital permiten desarrollar implantes adaptados
+              a la anatomía de determinados pacientes.
+            </p>
+
+          </div>
+
+        </header>
+
+
+        <figure class="feature-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1800&q=85"
+            alt="Investigación médica y tecnología aplicada a la salud"
+            loading="lazy"
+          >
+
+          <figcaption class="image-caption">
+            <span>Planificación y reconstrucción</span>
+            <span>Imagen ilustrativa</span>
+          </figcaption>
+
+        </figure>
+
+
+        <div class="technology-body">
+
+          <div class="article-copy">
+
+            <h3>Implantes personalizados</h3>
+
+            <p>
+              Después de una craniectomía puede ser necesario reconstruir
+              el defecto óseo. En casos seleccionados, las imágenes
+              tomográficas y el diseño asistido por computadora permiten
+              planificar un implante adaptado a la anatomía craneal.
+            </p>
+
+            <h3>Materiales utilizados</h3>
+
+            <p>
+              Entre las alternativas disponibles se encuentran
+              determinados implantes de titanio, PEEK y otros
+              materiales utilizados en reconstrucción craneal.
+              Cada uno tiene características específicas de
+              fabricación, adaptación y comportamiento clínico.
+            </p>
+
+            <h3>Planificación tridimensional</h3>
+
+            <p>
+              La reconstrucción digital puede ayudar a estimar
+              la geometría del defecto y diseñar un implante
+              personalizado. La selección del material y del
+              método de reconstrucción debe considerar los tejidos
+              blandos, los antecedentes quirúrgicos, el riesgo
+              de infección y las condiciones clínicas del paciente.
+            </p>
+
+            <h3>Una solución individualizada</h3>
+
+            <p>
+              No existe un material universalmente superior para
+              todos los defectos craneales. La decisión debe
+              considerar las características del defecto, las
+              necesidades reconstructivas y las ventajas y
+              limitaciones de las alternativas disponibles.
+            </p>
+
+          </div>
+
+
+          <aside class="info-card">
+
+            <span class="mono">Principio reconstructivo</span>
+
+            <h3>Diseño adaptado a la anatomía</h3>
+
+            <p>
+              La planificación individualizada puede contribuir
+              a una mejor adaptación geométrica del implante.
+              El resultado final también depende de la técnica
+              quirúrgica, la cobertura de tejidos blandos y
+              las condiciones clínicas.
+            </p>
+
+          </aside>
+
+        </div>
+
+        <div class="clinical-note">
+
+          <span class="mono">Consideración clínica</span>
+
+          <p>
+            Los implantes personalizados requieren planificación
+            y fabricación adecuadas, además de una valoración
+            individual de los riesgos reconstructivos. La
+            tecnología de diseño no elimina las posibles
+            complicaciones quirúrgicas.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- REFERENCIAS -->
+
+    <section class="references">
+      <div class="wrap">
+
+        <div class="mono section-label">
+          Fuentes de consulta
+        </div>
+
+        <h2>
+          Información para profundizar.
+        </h2>
+
+        <p class="references-intro">
+          Los fabricantes proporcionan información sobre las
+          características técnicas y las indicaciones de sus
+          productos. Para valorar beneficios, riesgos y resultados
+          clínicos es necesario consultar también literatura
+          científica independiente.
+        </p>
+
+        <ol class="reference-list">
+
+          <li>
+            ZEISS. Información sobre microscopios quirúrgicos
+            y soluciones de visualización para neurocirugía.
+            <br>
+            <a
+              href="https://www.zeiss.com/meditec/en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sitio oficial de ZEISS Medical Technology ↗
+            </a>
+          </li>
+
+          <li>
+            Brainlab. Información sobre planificación y navegación
+            quirúrgica.
+            <br>
+            <a
+              href="https://www.brainlab.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sitio oficial de Brainlab ↗
+            </a>
+          </li>
+
+          <li>
+            Medtronic. Información sobre soluciones para cirugía
+            de columna y prótesis discales.
+            <br>
+            <a
+              href="https://www.medtronic.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sitio oficial de Medtronic ↗
+            </a>
+          </li>
+
+          <li>
+            PubMed. Base de datos de literatura biomédica para
+            consultar estudios y revisiones sobre microcirugía,
+            neuronavegación, neuromonitoreo e implantes.
+            <br>
+            <a
+              href="https://pubmed.ncbi.nlm.nih.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Consultar PubMed ↗
+            </a>
+          </li>
+
+          <li>
+            Cochrane Library. Revisiones sistemáticas sobre
+            intervenciones sanitarias y resultados clínicos.
+            <br>
+            <a
+              href="https://www.cochranelibrary.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Consultar Cochrane Library ↗
+            </a>
+          </li>
+
+        </ol>
+
+      </div>
+    </section>
+
+
+    <!-- CIERRE -->
+
+    <section class="closing">
+      <div class="wrap">
+
+        <div class="mono section-label">
+          Tecnología con criterio
+        </div>
+
+        <h2>
+          La mejor herramienta es la que responde a la necesidad
+          de cada paciente.
+        </h2>
+
+        <p>
+          La selección de una técnica o tecnología debe partir
+          de un diagnóstico preciso, una indicación adecuada
+          y una valoración individual de sus beneficios,
+          riesgos y alternativas.
+        </p>
+
+        <a class="primary-link" href="index.html">
+          Volver a la página principal <span>↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+
+      <p>
+        © <span id="current-year"></span> Dr. Gustavo Arias · Neurocirugía
+      </p>
+
+      <a class="footer-link" href="index.html">
+        Página principal
+      </a>
+
+    </div>
+  </footer>
+
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
