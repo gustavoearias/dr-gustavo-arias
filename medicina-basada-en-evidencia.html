@@ -1,0 +1,614 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f3f0">
+  <meta name="description" content="Una reflexión sobre medicina basada en evidencia, pensamiento crítico, incertidumbre clínica y toma de decisiones compartidas en neurocirugía.">
+  <title>Medicina basada en evidencia | Dr. Gustavo Arias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4f3f0;
+      --ink: #202832;
+      --muted: #6f777e;
+      --line: #d8d9d7;
+      --accent: #6e8798;
+      --soft: #e6e9eb;
+      --white: #fff;
+      --beige: #d7c6b2;
+      --max: 1280px;
+      --reading: 740px;
+    }
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto;
+    }
+    .mono {
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 11px;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248,248,245,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font-family: 'Newsreader', serif;
+      font-size: 17px;
+      font-weight: 400;
+    }
+    .nav-link {
+      font-size: 12px;
+      color: #555950;
+      transition: color .2s;
+    }
+    .nav-link:hover { color: var(--accent); }
+    .article-hero {
+      padding: 105px 0 78px;
+      border-bottom: 1px solid var(--line);
+    }
+    .article-hero-inner {
+      width: min(900px, calc(100% - 48px));
+      margin: auto;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    h1, h2, h3, blockquote {
+      font-family: 'Newsreader', serif;
+      font-weight: 400;
+    }
+    h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      margin: 0;
+      max-width: 850px;
+    }
+    .hero-description {
+      max-width: 660px;
+      font-family: 'Newsreader', serif;
+      font-size: clamp(21px, 2.5vw, 27px);
+      line-height: 1.5;
+      color: #59636b;
+      margin: 28px 0 0;
+    }
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 190px minmax(0, var(--reading));
+      justify-content: center;
+      gap: 70px;
+      padding: 80px 24px 110px;
+    }
+    .article-sidebar {
+      align-self: start;
+      position: sticky;
+      top: 115px;
+    }
+    .sidebar-title {
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .sidebar-links a:hover { color: var(--ink); }
+    .article-content {
+      min-width: 0;
+      font-size: 16px;
+      line-height: 1.95;
+      color: #535b61;
+    }
+    .article-content p { margin: 0 0 24px; }
+    .article-content h2 {
+      font-size: clamp(32px, 4vw, 43px);
+      line-height: 1.12;
+      letter-spacing: -.035em;
+      color: var(--ink);
+      margin: 76px 0 24px;
+      scroll-margin-top: 110px;
+    }
+    .article-content h3 {
+      font-size: 25px;
+      line-height: 1.25;
+      color: var(--ink);
+      margin: 35px 0 15px;
+    }
+    .article-content strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .article-content blockquote {
+      font-size: clamp(26px, 3.4vw, 36px);
+      line-height: 1.35;
+      letter-spacing: -.025em;
+      color: var(--ink);
+      margin: 0 0 34px;
+      padding: 28px 0 28px 28px;
+      border-left: 2px solid var(--beige);
+    }
+    .quote-note {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-top: 18px;
+      letter-spacing: 0;
+    }
+    .article-callout {
+      background: #eeefe9;
+      border: 1px solid #dfe1da;
+      padding: 28px 30px;
+      margin: 38px 0;
+    }
+    .article-callout .mono {
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    .article-callout p {
+      color: #4f585f;
+      margin: 0;
+    }
+    .article-content ul {
+      padding-left: 23px;
+      margin: 0 0 28px;
+    }
+    .article-content li {
+      padding-left: 5px;
+      margin-bottom: 12px;
+    }
+    .references {
+      border-top: 1px solid var(--line);
+      margin-top: 80px;
+      padding-top: 25px;
+    }
+    .references h2 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+    .references ol {
+      padding-left: 22px;
+      font-size: 13px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+    .references li { margin-bottom: 16px; }
+    .references a {
+      color: #607b8e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .article-disclaimer {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      margin-top: 42px;
+    }
+    .article-end {
+      background: #222923;
+      color: #f7f8f3;
+      padding: 65px 0;
+    }
+    .article-end-inner {
+      width: min(800px, calc(100% - 48px));
+      margin: auto;
+    }
+    .article-end .mono {
+      color: #b4cbb8;
+      margin-bottom: 20px;
+    }
+    .article-end h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -.035em;
+      margin: 0 0 18px;
+    }
+    .article-end p {
+      color: #c0c5bd;
+      font-size: 14px;
+      line-height: 1.9;
+      max-width: 600px;
+      margin: 0 0 26px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 17px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.65);
+      transition: background .2s;
+    }
+    .button:hover { background: rgba(255,255,255,.1); }
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .footer-name {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    @media (max-width: 850px) {
+      .article-layout {
+        grid-template-columns: minmax(0, 740px);
+        padding-top: 55px;
+      }
+      .article-sidebar { display: none; }
+      .article-hero { padding: 75px 0 55px; }
+      .article-content h2 { margin-top: 58px; }
+    }
+    @media (max-width: 600px) {
+      .wrap, .article-hero-inner { width: calc(100% - 36px); }
+      .nav-inner { min-height: 68px; }
+      .brand { font-size: 12px; }
+      .article-layout { padding: 45px 18px 75px; }
+      .article-content { font-size: 15px; line-height: 1.85; }
+      .article-content blockquote { padding-left: 20px; }
+      .article-callout { padding: 22px; }
+      .article-meta { gap: 10px 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Dr. Gustavo Arias, página principal">
+        <span class="brand-mark">GA</span>
+        <span>DR. GUSTAVO ARIAS<br>
+          <small style="font-size:9px;letter-spacing:.18em;font-weight:400">NEUROCIRUGÍA</small>
+        </span>
+      </a>
+      <a class="nav-link" href="index.html">← Volver a la página principal</a>
+    </div>
+  </header>
+  <main>
+    <section class="article-hero">
+      <div class="article-hero-inner">
+        <p class="eyebrow mono"><span class="dot"></span> Investigación · Pensamiento crítico</p>
+        <h1>Medicina basada en evidencia: más allá de las publicaciones.</h1>
+        <p class="hero-description">
+          La ciencia nos ofrece herramientas para tomar mejores decisiones.
+          Comprender sus alcances y limitaciones es tan importante como conocer sus resultados.
+        </p>
+        <div class="article-meta">
+          <span>POR DR. GUSTAVO ARIAS</span>
+          <span>NEUROCIRUGÍA</span>
+          <span>LECTURA: 7 MIN</span>
+        </div>
+      </div>
+    </section>
+<div class="article-layout">
+  <aside class="article-sidebar">
+    <div class="sidebar-title mono">Contenido</div>
+    <nav class="sidebar-links" aria-label="Contenido del artículo">
+      <a href="#incertidumbre">Incertidumbre y probabilidad</a>
+      <a href="#que-es">Qué es la medicina basada en evidencia</a>
+      <a href="#calidad">La calidad de la evidencia</a>
+      <a href="#juicio">Evidencia y juicio clínico</a>
+      <a href="#decisiones">Decisiones compartidas</a>
+      <a href="#neurocirugia">El desafío en neurocirugía</a>
+      <a href="#conclusion">Una práctica responsable</a>
+      <a href="#referencias">Referencias</a>
+    </nav>
+  </aside>
+  <article class="article-content">
+    <section id="incertidumbre">
+      <blockquote>
+        «La medicina es la ciencia de la incertidumbre y el arte de la probabilidad».
+        <div class="quote-note">
+          Aforismo ampliamente atribuido a William Osler. La atribución histórica exacta requiere verificación.
+        </div>
+      </blockquote>
+      <p>
+        La medicina se desarrolla en un terreno donde el conocimiento avanza constantemente,
+        pero rara vez elimina por completo la incertidumbre. Cada paciente presenta una combinación
+        particular de antecedentes, síntomas, hallazgos clínicos, expectativas y riesgos.
+        Incluso cuando disponemos de estudios científicos rigurosos, sus resultados no siempre
+        permiten anticipar con certeza qué ocurrirá en una persona determinada.
+      </p>
+      <p>
+        Esta realidad no representa una debilidad de la medicina. Es una característica inherente
+        a una disciplina que estudia sistemas biológicos complejos y busca tomar decisiones bajo
+        condiciones de información incompleta. La respuesta no consiste en ignorar la incertidumbre,
+        sino en aprender a reconocerla, cuantificarla cuando sea posible y comunicarla con honestidad.
+      </p>
+    </section>
+    <section id="que-es">
+      <h2>¿Qué significa realmente la medicina basada en evidencia?</h2>
+      <p>
+        La medicina basada en evidencia no consiste simplemente en leer artículos científicos,
+        seguir las recomendaciones de una guía clínica o adoptar la conclusión de la publicación
+        más reciente. Implica un proceso sistemático para formular preguntas clínicas, buscar
+        información pertinente, evaluar críticamente su validez y determinar en qué medida
+        sus resultados son aplicables a una situación concreta.
+      </p>
+      <p>
+        El modelo clásico de la medicina basada en evidencia propone integrar tres elementos:
+        <strong>la mejor evidencia científica disponible, la experiencia clínica y los valores,
+        preferencias y circunstancias del paciente.</strong> Ninguno de estos componentes,
+        por sí solo, resuelve todas las decisiones clínicas.
+      </p>
+      <div class="article-callout">
+        <div class="mono">Una distinción fundamental</div>
+        <p>
+          La evidencia científica informa las decisiones; no las toma automáticamente.
+          Aplicarla exige comprender la pregunta clínica, la calidad de los datos y las
+          particularidades de la persona que tenemos delante.
+        </p>
+      </div>
+    </section>
+    <section id="calidad">
+      <h2>No todos los estudios responden las mismas preguntas</h2>
+      <p>
+        La investigación médica utiliza distintos diseños porque las preguntas clínicas son
+        diferentes. Un ensayo clínico aleatorizado puede ser apropiado para evaluar la eficacia
+        de una intervención; un estudio de cohortes puede ayudar a comprender el pronóstico
+        o los efectos adversos a largo plazo; y una investigación diagnóstica requiere evaluar
+        la capacidad de una prueba para identificar correctamente una enfermedad.
+      </p>
+      <p>
+        Por eso, no es suficiente clasificar los estudios según su diseño. También debemos
+        analizar cómo fueron realizados, qué población incluyeron, qué desenlaces midieron,
+        cuántos participantes completaron el seguimiento y cuáles son las limitaciones
+        que pueden modificar la interpretación de los resultados.
+      </p>
+      <h3>¿Qué conviene evaluar al leer una publicación?</h3>
+      <ul>
+        <li><strong>La pregunta clínica:</strong> qué problema intenta resolver el estudio y si su diseño es adecuado para responderlo.</li>
+        <li><strong>La metodología:</strong> cómo se seleccionaron los participantes, cómo se compararon los grupos y cómo se midieron los resultados.</li>
+        <li><strong>El riesgo de sesgo:</strong> qué factores podrían distorsionar las estimaciones o favorecer determinadas conclusiones.</li>
+        <li><strong>La magnitud del efecto:</strong> qué tan importante es la diferencia observada, más allá de su significación estadística.</li>
+        <li><strong>La precisión:</strong> cuánta incertidumbre existe alrededor de la estimación y qué muestran sus intervalos de confianza.</li>
+        <li><strong>La aplicabilidad:</strong> si los participantes, las intervenciones y las condiciones del estudio se parecen a los del paciente que estamos evaluando.</li>
+      </ul>
+      <p>
+        Un resultado estadísticamente significativo no necesariamente representa un beneficio
+        clínicamente importante. Del mismo modo, la ausencia de significación estadística no
+        demuestra por sí sola que dos intervenciones sean equivalentes. La interpretación exige
+        considerar el tamaño del efecto, su precisión, el diseño del estudio y el contexto clínico.
+      </p>
+    </section>
+    <section id="juicio">
+      <h2>La evidencia no sustituye al juicio clínico</h2>
+      <p>
+        Una publicación puede ofrecer información valiosa sin resolver por completo una decisión.
+        Los ensayos clínicos suelen establecer criterios de inclusión y exclusión que permiten
+        estudiar poblaciones definidas. En la práctica, sin embargo, los pacientes pueden presentar
+        comorbilidades, anatomías, grados de enfermedad y prioridades que no coinciden exactamente
+        con las de los participantes de esos estudios.
+      </p>
+      <p>
+        El juicio clínico permite interpretar esas diferencias, estimar su relevancia y valorar
+        si los resultados disponibles pueden trasladarse razonablemente a una persona concreta.
+        No debe utilizarse como justificación para ignorar evidencia sólida, pero tampoco es
+        razonable asumir que una recomendación puede aplicarse de manera idéntica en todas
+        las circunstancias.
+      </p>
+      <p>
+        La experiencia profesional es especialmente valiosa cuando se utiliza para reconocer
+        patrones, anticipar dificultades y contextualizar decisiones. Su valor aumenta cuando
+        se combina con la evaluación crítica de la literatura y disminuye cuando se convierte
+        en una razón incuestionable para mantener una práctica.
+      </p>
+    </section>
+    <section id="decisiones">
+      <h2>Decidir junto al paciente</h2>
+      <p>
+        Una decisión clínicamente razonable no depende exclusivamente de la probabilidad
+        de obtener un determinado resultado. También importa cuánto valora el paciente ese
+        resultado, qué riesgos está dispuesto a asumir y qué consecuencias considera aceptables.
+      </p>
+      <p>
+        La toma de decisiones compartida busca integrar la evidencia científica con la experiencia
+        del profesional y las preferencias informadas de la persona. Requiere explicar las alternativas,
+        describir los beneficios y riesgos relevantes, reconocer las incertidumbres y comprobar
+        que la información ha sido comprendida.
+      </p>
+      <p>
+        Dos pacientes con diagnósticos similares pueden tomar decisiones diferentes sin que
+        necesariamente una de ellas sea incorrecta. Sus circunstancias, objetivos y valores
+        pueden ser distintos. La responsabilidad profesional consiste en ayudarles a comprender
+        las opciones disponibles y acompañar una decisión informada, no en sustituir sus
+        preferencias por las del médico.
+      </p>
+    </section>
+    <section id="neurocirugia">
+      <h2>El desafío particular de la evidencia en neurocirugía</h2>
+      <p>
+        La neurocirugía plantea preguntas en las que el beneficio potencial de una intervención
+        debe compararse con riesgos que pueden afectar de manera importante la función
+        neurológica, la autonomía y la calidad de vida. Además, muchas decisiones dependen
+        de factores anatómicos, de la evolución clínica, de la experiencia del equipo y de
+        las características particulares de cada lesión.
+      </p>
+      <p>
+        En determinadas áreas, la investigación se enfrenta a dificultades adicionales:
+        enfermedades poco frecuentes, heterogeneidad entre pacientes, evolución tecnológica
+        y limitaciones para realizar estudios comparativos. Esto no elimina la necesidad
+        de evidencia rigurosa; hace todavía más importante reconocer qué preguntas han sido
+        bien estudiadas y cuáles permanecen abiertas.
+      </p>
+      <p>
+        Cuando los datos son limitados, es fundamental distinguir entre lo que está respaldado
+        por evidencia consistente, lo que se apoya en resultados preliminares y lo que depende
+        principalmente de experiencia clínica o consenso profesional. Estas categorías no son
+        intercambiables y deben comunicarse de forma transparente.
+      </p>
+      <p>
+        La tecnología también requiere evaluación crítica. Que una técnica sea más reciente,
+        sofisticada o atractiva no demuestra por sí mismo que produzca mejores resultados
+        para el paciente. Su utilidad debe analizarse en función de los desenlaces relevantes,
+        la seguridad, las alternativas disponibles y las condiciones en las que se utiliza.
+      </p>
+    </section>
+    <section id="conclusion">
+      <h2>Una práctica guiada por evidencia, criterio y responsabilidad</h2>
+      <p>
+        La medicina basada en evidencia no promete eliminar la incertidumbre ni ofrecer una
+        respuesta universal para cada problema clínico. Su propósito es mejorar la calidad
+        de las decisiones mediante un uso riguroso, crítico y transparente del conocimiento
+        disponible.
+      </p>
+      <p>
+        Esto exige mantener una actitud abierta a corregir errores, revisar prácticas establecidas
+        y reconocer cuándo la información es insuficiente. También exige comunicar los límites
+        del conocimiento sin generar falsas certezas y sin presentar como demostrado aquello
+        que todavía es incierto.
+      </p>
+      <p>
+        En neurocirugía, donde las decisiones pueden tener consecuencias profundas, considero
+        fundamental integrar la investigación científica con el juicio clínico, las circunstancias
+        de cada persona y una comunicación honesta. La evidencia debe orientar la práctica;
+        la responsabilidad profesional consiste en interpretarla con criterio y aplicarla
+        respetando al paciente.
+      </p>
+    </section>
+    <section class="references" id="referencias">
+      <h2>Referencias para profundizar</h2>
+      <ol>
+        <li>
+          Sackett DL, Rosenberg WMC, Gray JAM, Haynes RB, Richardson WS.
+          Evidence based medicine: what it is and what it isn't.
+          <em>BMJ.</em> 1996;312:71–72.
+          <br>
+          <a href="https://doi.org/10.1136/bmj.312.7023.71" target="_blank" rel="noopener noreferrer">Consultar publicación original ↗</a>
+        </li>
+        <li>
+          Guyatt G, Cairns J, Churchill D, et al.
+          Evidence-Based Medicine: A New Approach to Teaching the Practice of Medicine.
+          <em>JAMA.</em> 1992;268(17):2420–2425.
+          <br>
+          <a href="https://doi.org/10.1001/jama.1992.03490170092032" target="_blank" rel="noopener noreferrer">Consultar publicación original ↗</a>
+        </li>
+        <li>
+          Higgins JPT, Thomas J, Chandler J, et al., eds.
+          <em>Cochrane Handbook for Systematic Reviews of Interventions.</em>
+          Cochrane.
+          <br>
+          <a href="https://training.cochrane.org/handbook" target="_blank" rel="noopener noreferrer">Consultar el manual ↗</a>
+        </li>
+        <li>
+          Guyatt GH, Oxman AD, Vist GE, et al.
+          GRADE: an emerging consensus on rating quality of evidence and strength of recommendations.
+          <em>BMJ.</em> 2008;336:924–926.
+          <br>
+          <a href="https://doi.org/10.1136/bmj.39489.470347.AD" target="_blank" rel="noopener noreferrer">Consultar publicación original ↗</a>
+        </li>
+      </ol>
+      <p class="article-disclaimer">
+        Este artículo tiene fines informativos y académicos. No sustituye la valoración
+        médica individual ni constituye una recomendación terapéutica para un caso concreto.
+        El contenido deberá revisarse y actualizarse conforme avance la evidencia científica.
+      </p>
+    </section>
+  </article>
+</div>
+<section class="article-end">
+  <div class="article-end-inner">
+    <div class="mono">Neurocirugía · Guadalajara, México</div>
+    <h2>La evidencia orienta.<br>El criterio permite interpretarla.</h2>
+    <p>
+      Conoce más sobre mi enfoque profesional, las áreas de práctica y los principios
+      que guían mi ejercicio de la neurocirugía.
+    </p>
+    <a class="button" href="index.html#enfoque">Volver a mi página principal <span>↗</span></a>
+  </div>
+</section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <span class="footer-name">DR. GUSTAVO ARIAS</span>
+      <span>Neurocirugía · Guadalajara, México</span>
+      <span>© <span id="year"></span> · Información médica con rigor y claridad.</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
