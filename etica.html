@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Principios éticos que orientan la práctica neuroquirúrgica: seguridad del paciente, independencia clínica, autonomía, honestidad y responsabilidad profesional.">
+
+  <title>Ética profesional | Dr. Gustavo Arias</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --surface: #eeece5;
+      --text: #252923;
+      --muted: #77796f;
+      --accent: #667c80;
+      --border: #d9d8d0;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 48px, 1080px);
+      margin-inline: auto;
+    }
+
+    /* Navegación */
+
+    header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 21px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a.active {
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 4px;
+    }
+
+    /* Introducción */
+
+    .hero {
+      padding: 100px 0 76px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 10px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 6vw, 68px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .hero-description {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    /* Principios */
+
+    .principles {
+      padding: 64px 0 88px;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .principles-list {
+      border-top: 1px solid var(--border);
+      margin-top: 28px;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 64px minmax(180px, 0.8fr) 1.4fr;
+      gap: 28px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .number {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      padding-top: 7px;
+    }
+
+    .principle h2 {
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1.25;
+      font-weight: 400;
+    }
+
+    .principle p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 500px;
+    }
+
+    /* Cierre */
+
+    .closing {
+      background: var(--surface);
+      padding: 48px;
+      margin-bottom: 88px;
+    }
+
+    .closing p {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.4;
+      max-width: 800px;
+    }
+
+    /* Pie de página */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-content p,
+    .footer-content a {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-content a:hover {
+      color: var(--text);
+    }
+
+    /* Adaptación a móviles */
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 36px, 1080px);
+      }
+
+      .nav {
+        padding: 20px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .nav-links {
+        gap: 12px 20px;
+      }
+
+      .hero {
+        padding: 68px 0 52px;
+      }
+
+      .principles {
+        padding: 48px 0 60px;
+      }
+
+      .principle {
+        grid-template-columns: 32px 1fr;
+        gap: 12px 16px;
+        padding: 24px 0;
+      }
+
+      .principle h2 {
+        font-size: 23px;
+      }
+
+      .principle p {
+        grid-column: 2;
+      }
+
+      .closing {
+        padding: 28px;
+        margin-bottom: 60px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">Dr. Gustavo Arias</a>
+
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="medicina-basada-en-evidencia.html">Evidencia</a>
+        <a href="toma-decisiones-compartidas.html">Decisiones compartidas</a>
+        <a href="tecnologias.html">Tecnología</a>
+        <a href="docencia.html">Docencia</a>
+        <a href="etica.html" class="active" aria-current="page">Ética</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Principios de la práctica médica</p>
+
+        <h1>Una práctica guiada por principios.</h1>
+
+        <p class="hero-description">
+          La neurocirugía exige conocimiento científico y precisión técnica,
+          pero también responsabilidad en cada decisión. La evidencia, la
+          autonomía del paciente y la integridad profesional deben orientar
+          la práctica clínica y quirúrgica.
+        </p>
+      </div>
+    </section>
+
+    <section class="principles">
+      <div class="container">
+        <p class="section-label">Principios fundamentales</p>
+
+        <div class="principles-list">
+
+          <article class="principle">
+            <span class="number">01</span>
+            <h2>Primero, no hacer daño</h2>
+            <p>
+              Toda intervención debe justificar sus riesgos por el beneficio
+              esperado. Saber cuándo operar también implica reconocer cuándo
+              es preferible observar o elegir otra alternativa.
+            </p>
+          </article>
+
+          <article class="principle">
+            <span class="number">02</span>
+            <h2>Independencia clínica</h2>
+            <p>
+              Las decisiones quirúrgicas y la elección de técnicas o implantes
+              deben responder a la evidencia científica y al mejor interés del
+              paciente, no a intereses económicos o comerciales ajenos a su atención.
+            </p>
+          </article>
+
+          <article class="principle">
+            <span class="number">03</span>
+            <h2>Autonomía del paciente</h2>
+            <p>
+              Cada persona tiene derecho a comprender su situación, conocer
+              las alternativas y participar libremente en las decisiones
+              sobre su tratamiento.
+            </p>
+          </article>
+
+          <article class="principle">
+            <span class="number">04</span>
+            <h2>Honestidad</h2>
+            <p>
+              Informar con claridad sobre los beneficios, los riesgos y las
+              incertidumbres es indispensable. Ningún procedimiento permite
+              garantizar un resultado.
+            </p>
+          </article>
+
+          <article class="principle">
+            <span class="number">05</span>
+            <h2>Responsabilidad profesional</h2>
+            <p>
+              Mantenerse actualizado, reconocer los límites de la propia
+              experiencia y actuar con respeto por la dignidad y el bienestar
+              del paciente forman parte del ejercicio médico responsable.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="closing">
+        <p>
+          Las decisiones neuroquirúrgicas deben basarse en la evidencia
+          científica, el juicio clínico y el respeto por la autonomía
+          y el bienestar del paciente.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 Dr. Gustavo Arias · Neurocirugía</p>
+      <a href="index.html">Volver al inicio ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
