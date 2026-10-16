@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Docencia y pensamiento crítico | Dr. Gustavo Arias</title>
+
+  <meta
+    name="description"
+    content="La docencia médica, el pensamiento crítico y la actualización continua como parte de una práctica neuroquirúrgica responsable. Conoce la filosofía académica del Dr. Gustavo Arias."
+  >
+
+  <meta name="theme-color" content="#f4f3f0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --paper: #f4f3f0;
+      --ink: #202832;
+      --muted: #6f777e;
+      --line: #d8d9d7;
+      --accent: #6e8798;
+      --soft: #e6e9eb;
+      --beige: #d7c6b2;
+
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+      --mono: "DM Mono", monospace;
+
+      --page-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(var(--page-width), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .mono {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* NAVEGACIÓN */
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 243, 240, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-role {
+      margin-top: 5px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-back {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover {
+      color: var(--ink);
+    }
+
+    /* HERO */
+
+    .page-hero {
+      padding: 110px 0 85px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      color: var(--accent);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 950px;
+      margin-bottom: 30px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 8vw, 86px);
+      font-weight: 400;
+      letter-spacing: -0.065em;
+      line-height: 0.99;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      margin-bottom: 36px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      color: var(--muted);
+    }
+
+    /* INTRODUCCIÓN */
+
+    .intro {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 65px;
+      padding: 95px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .side-label {
+      color: var(--muted);
+    }
+
+    .intro h2 {
+      max-width: 800px;
+      margin-bottom: 26px;
+      font-family: var(--serif);
+      font-size: clamp(34px, 4vw, 49px);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+    }
+
+    .intro p {
+      max-width: 750px;
+      color: #505b63;
+    }
+
+    /* CIFRAS */
+
+    .experience {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .experience-heading {
+      margin-bottom: 35px;
+      color: var(--muted);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .experience-item {
+      padding: 34px;
+      background: var(--soft);
+      border: 1px solid #dce0e2;
+    }
+
+    .experience-number {
+      display: block;
+      margin-bottom: 14px;
+      font-family: var(--serif);
+      font-size: clamp(43px, 5vw, 65px);
+      font-weight: 400;
+      letter-spacing: -0.06em;
+      line-height: 1.1;
+    }
+
+    .experience-title {
+      margin-bottom: 12px;
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .experience-item p {
+      margin-bottom: 0;
+      color: #58636b;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* SECCIONES */
+
+    .content-section {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 65px;
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-number {
+      margin-bottom: 14px;
+      color: var(--accent);
+    }
+
+    .section-aside {
+      color: var(--muted);
+    }
+
+    .section-aside p {
+      max-width: 190px;
+      margin-top: 20px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .section-content h2 {
+      max-width: 760px;
+      margin-bottom: 25px;
+      font-family: var(--serif);
+      font-size: clamp(34px, 4vw, 47px);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+    }
+
+    .section-content h3 {
+      margin: 35px 0 14px;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+    }
+
+    .section-content h3:first-of-type {
+      margin-top: 32px;
+    }
+
+    .section-content p {
+      max-width: 760px;
+      color: #505b63;
+    }
+
+    /* FRASE DESTACADA */
+
+    .quote-block {
+      margin: 38px 0;
+      padding: 30px 32px;
+      border-left: 2px solid var(--accent);
+      background: rgba(230, 233, 235, 0.55);
+    }
+
+    .quote-block p {
+      margin-bottom: 0;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(23px, 3vw, 31px);
+      line-height: 1.45;
+      letter-spacing: -0.025em;
+    }
+
+    /* PRINCIPIOS */
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 38px;
+    }
+
+    .principle {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .principle-number {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--accent);
+    }
+
+    .principle h3 {
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .principle p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* CIERRE */
+
+    .closing {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .closing h2 {
+      max-width: 780px;
+      margin: 0 auto 25px;
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 60px);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 1.12;
+    }
+
+    .closing p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    .primary-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 13px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .primary-link:hover {
+      background: var(--accent);
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-link {
+      color: var(--muted);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: var(--ink);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .wrap {
+        width: min(100% - 36px, var(--page-width));
+      }
+
+      .page-hero {
+        padding: 75px 0 60px;
+      }
+
+      .intro,
+      .content-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .intro {
+        padding: 65px 0;
+      }
+
+      .content-section {
+        padding: 70px 0;
+      }
+
+      .section-aside p {
+        max-width: 500px;
+      }
+
+      .experience-grid {
+        gap: 16px;
+      }
+
+      .experience-item {
+        padding: 25px;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .closing {
+        padding: 75px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .nav-back {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 49px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-meta {
+        gap: 10px 16px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-item {
+        padding: 26px;
+      }
+
+      .quote-block {
+        padding: 24px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGACIÓN -->
+
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+
+      <a class="brand" href="index.html">
+        <span class="brand-name">Dr. Gustavo Arias</span>
+        <span class="brand-role">Neurocirugía</span>
+      </a>
+
+      <a class="nav-back" href="index.html">
+        ← Volver al inicio
+      </a>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+      <div class="wrap">
+
+        <div class="eyebrow mono">
+          Docencia · Pensamiento crítico · Aprendizaje
+        </div>
+
+        <h1>
+          Enseñar también<br>
+          es una forma<br>
+          de aprender.
+        </h1>
+
+        <p class="hero-description">
+          La medicina no avanza únicamente acumulando conocimientos,
+          sino aprendiendo a interpretarlos, cuestionarlos y aplicarlos
+          con criterio. La docencia y el aprendizaje continuo forman
+          parte de mi manera de entender la práctica médica.
+        </p>
+
+        <div class="hero-meta mono">
+          <span>Dr. Gustavo Arias</span>
+          <span>Neurocirugía</span>
+          <span>Formación médica continua</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- INTRODUCCIÓN -->
+
+    <section class="intro wrap">
+
+      <div class="side-label mono">
+        Mi perspectiva
+      </div>
+
+      <div>
+
+        <h2>
+          El conocimiento adquiere valor cuando se comparte y se
+          examina críticamente.
+        </h2>
+
+        <p>
+          Mi práctica profesional en una institución pública está
+          vinculada también con mi interés por la docencia, el
+          intercambio de conocimientos y la actualización continua.
+          Considero que el entorno hospitalario ofrece oportunidades
+          valiosas para compartir experiencias, discutir problemas
+          clínicos complejos y aprender de la experiencia colectiva.
+        </p>
+
+        <p>
+          Enseñar no consiste únicamente en transmitir información.
+          También implica ayudar a desarrollar el razonamiento clínico,
+          la capacidad de analizar la evidencia y la responsabilidad
+          necesaria para tomar decisiones fundamentadas.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCIA DOCENTE -->
+
+    <section class="experience">
+      <div class="wrap">
+
+        <div class="experience-heading mono">
+          Experiencia en formación médica
+        </div>
+
+        <div class="experience-grid">
+
+          <article class="experience-item">
+
+            <span class="experience-number">
+              +700
+            </span>
+
+            <h2 class="experience-title">
+              Médicos internos de pregrado
+            </h2>
+
+            <p>
+              Durante mis cinco años de residencia en el Antiguo
+              Hospital Civil de Guadalajara «Fray Antonio Alcalde»,
+              participé activamente en la formación clínica de más
+              de 700 médicos internos de pregrado.
+            </p>
+
+          </article>
+
+
+          <article class="experience-item">
+
+            <span class="experience-number">
+              2 generaciones
+            </span>
+
+            <h2 class="experience-title">
+              Residentes de neurocirugía
+            </h2>
+
+            <p>
+              Desde mi egreso como neurocirujano, he tenido la
+              oportunidad de acompañar la formación de dos generaciones
+              de residentes de neurocirugía, compartiendo conocimientos
+              y experiencias de la práctica clínica.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 01. DOCENCIA -->
+
+    <section class="content-section wrap" id="docencia">
+
+      <aside class="section-aside">
+
+        <div class="section-number mono">
+          01 / Docencia
+        </div>
+
+        <p>
+          Compartir conocimientos, experiencias y formas de razonar.
+        </p>
+
+      </aside>
+
+      <div class="section-content">
+
+        <h2>
+          Formar médicos es contribuir al futuro de la medicina.
+        </h2>
+
+        <p>
+          Durante mi formación y mi práctica profesional he encontrado
+          en la enseñanza una oportunidad para contribuir al desarrollo
+          de otros médicos. La discusión de casos, la revisión de
+          conceptos y el análisis de decisiones clínicas permiten
+          transformar la experiencia individual en conocimiento
+          compartido.
+        </p>
+
+        <p>
+          La formación médica requiere mucho más que memorizar
+          diagnósticos o aprender a ejecutar procedimientos.
+          Implica comprender los fundamentos de las decisiones,
+          reconocer las posibles consecuencias de nuestras acciones
+          y saber cuándo es necesario buscar más información o
+          solicitar la opinión de otros profesionales.
+        </p>
+
+        <div class="quote-block">
+
+          <p>
+            Enseñar no es solamente transmitir respuestas, sino
+            ayudar a formular mejores preguntas.
+          </p>
+
+        </div>
+
+        <p>
+          Considero que el entorno hospitalario es especialmente
+          valioso para este aprendizaje porque permite relacionar
+          los conocimientos teóricos con situaciones clínicas reales,
+          siempre desde el respeto al paciente y a la responsabilidad
+          que implica su atención.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- 02. PENSAMIENTO CRÍTICO -->
+
+    <section class="content-section wrap" id="pensamiento-critico">
+
+      <aside class="section-aside">
+
+        <div class="section-number mono">
+          02 / Pensamiento crítico
+        </div>
+
+        <p>
+          Analizar la información antes de convertirla en una decisión.
+        </p>
+
+      </aside>
+
+      <div class="section-content">
+
+        <h2>
+          No basta con conocer la evidencia. Hay que saber interpretarla.
+        </h2>
+
+        <p>
+          La literatura médica crece constantemente, pero no todos
+          los estudios tienen la misma calidad ni todas sus conclusiones
+          son aplicables a cualquier paciente. El pensamiento crítico
+          exige examinar cómo se obtuvo la información, qué significan
+          realmente los resultados y cuáles son sus limitaciones.
+        </p>
+
+        <p>
+          Al evaluar un estudio científico, considero fundamental
+          distinguir entre la solidez metodológica, la relevancia
+          clínica y la posibilidad de aplicar sus resultados a una
+          situación particular.
+        </p>
+
+        <div class="principles">
+
+          <article class="principle">
+
+            <span class="principle-number mono">
+              01
+            </span>
+
+            <h3>Evaluar</h3>
+
+            <p>
+              Analizar el diseño, la metodología, los posibles sesgos
+              y la calidad de la evidencia disponible.
+            </p>
+
+          </article>
+
+
+          <article class="principle">
+
+            <span class="principle-number mono">
+              02
+            </span>
+
+            <h3>Cuestionar</h3>
+
+            <p>
+              Reconocer las limitaciones de los estudios y evitar
+              aceptar conclusiones sin examinar sus fundamentos.
+            </p>
+
+          </article>
+
+
+          <article class="principle">
+
+            <span class="principle-number mono">
+              03
+            </span>
+
+            <h3>Aplicar</h3>
+
+            <p>
+              Integrar la evidencia con el juicio clínico y las
+              circunstancias, necesidades y preferencias de cada paciente.
+            </p>
+
+          </article>
+
+        </div>
+
+        <p>
+          Esta perspectiva es especialmente importante en neurocirugía,
+          donde algunas decisiones implican riesgos significativos
+          y donde la evidencia disponible puede presentar limitaciones
+          relacionadas con la complejidad de las enfermedades y la
+          selección de los pacientes.
+        </p>
+
+        <p>
+          Mi interés por el pensamiento crítico está estrechamente
+          relacionado con la medicina basada en evidencia: no se
+          trata de seguir publicaciones de manera automática, sino
+          de comprender qué nos permiten concluir y qué preguntas
+          permanecen abiertas.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- 03. ACTUALIZACIÓN CONTINUA -->
+
+    <section class="content-section wrap" id="actualizacion">
+
+      <aside class="section-aside">
+
+        <div class="section-number mono">
+          03 / Aprendizaje continuo
+        </div>
+
+        <p>
+          Una práctica profesional abierta a la revisión y al cambio.
+        </p>
+
+      </aside>
+
+      <div class="section-content">
+
+        <h2>
+          La formación médica no termina con la especialidad.
+        </h2>
+
+        <p>
+          La neurocirugía evoluciona de manera constante. Cambian
+          las técnicas quirúrgicas, se desarrollan nuevas herramientas
+          diagnósticas y terapéuticas, y la investigación modifica
+          nuestra comprensión de numerosas enfermedades.
+        </p>
+
+        <p>
+          Mantener una práctica responsable exige revisar periódicamente
+          los conocimientos, identificar las áreas en las que necesitamos
+          aprender más y estar dispuestos a modificar nuestras decisiones
+          cuando la evidencia y las circunstancias clínicas lo justifican.
+        </p>
+
+        <h3>
+          Aprender también significa reconocer los límites.
+        </h3>
+
+        <p>
+          La experiencia clínica es valiosa, pero no es infalible.
+          Reconocer la incertidumbre, identificar las limitaciones
+          del conocimiento y consultar otras perspectivas son
+          componentes importantes del razonamiento médico.
+        </p>
+
+        <p>
+          Por eso, entiendo la actualización continua como algo más
+          que conocer las últimas publicaciones o incorporar nuevas
+          técnicas. También significa revisar críticamente las propias
+          decisiones, aprender de los resultados y mantener una
+          actitud abierta ante nuevas preguntas.
+        </p>
+
+        <div class="quote-block">
+
+          <p>
+            Una práctica médica responsable requiere la disposición
+            de seguir aprendiendo, incluso después de haber adquirido
+            experiencia.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 04. INSTITUCIÓN PÚBLICA -->
+
+    <section class="content-section wrap" id="institucion-publica">
+
+      <aside class="section-aside">
+
+        <div class="section-number mono">
+          04 / Compromiso académico
+        </div>
+
+        <p>
+          La atención clínica, la enseñanza y el aprendizaje compartido.
+        </p>
+
+      </aside>
+
+      <div class="section-content">
+
+        <h2>
+          La práctica clínica también puede ser un espacio de formación.
+        </h2>
+
+        <p>
+          Mi trabajo en una institución pública forma parte de mi
+          interés por una práctica médica que combine la atención
+          clínica con la enseñanza y el aprendizaje continuo.
+          El hospital es un espacio en el que convergen distintas
+          experiencias, preguntas y perspectivas, y donde la discusión
+          de problemas complejos puede enriquecer la formación de
+          quienes participan en la atención.
+        </p>
+
+        <p>
+          La interacción con estudiantes y médicos en formación
+          representa una oportunidad para compartir conocimientos,
+          pero también para revisar conceptos, explicar el razonamiento
+          detrás de las decisiones y reconocer que siempre existen
+          aspectos susceptibles de mejora.
+        </p>
+
+        <p>
+          Considero que la docencia no es una actividad separada
+          del ejercicio clínico. Cuando se realiza con responsabilidad,
+          puede contribuir a una cultura de aprendizaje, discusión
+          académica y actualización permanente.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- REFLEXIÓN FINAL -->
+
+    <section class="closing">
+      <div class="wrap">
+
+        <div class="mono" style="color: var(--accent); margin-bottom: 25px;">
+          Una convicción profesional
+        </div>
+
+        <h2>
+          Compartir el conocimiento. Cuestionar las certezas.
+          Seguir aprendiendo.
+        </h2>
+
+        <p>
+          La docencia, el pensamiento crítico y la actualización
+          continua forman parte de una misma responsabilidad:
+          procurar que el conocimiento médico se interprete con
+          rigor, se comparta con generosidad y se aplique con criterio.
+        </p>
+
+        <a class="primary-link" href="index.html">
+          Volver a la página principal
+          <span>↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <div class="wrap footer-inner">
+
+      <p>
+        © <span id="current-year"></span>
+        Dr. Gustavo Arias · Neurocirugía
+      </p>
+
+      <a class="footer-link" href="index.html">
+        Página principal
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
